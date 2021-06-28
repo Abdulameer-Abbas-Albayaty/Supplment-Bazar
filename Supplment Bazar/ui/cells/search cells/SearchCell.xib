@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I1s-FW-ANM" customClass="SearchCell" customModule="Dizney" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="113"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ymw-nf-oCQ">
+                <rect key="frame" x="0.0" y="0.0" width="408" height="113"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqX-Sc-YjZ" customClass="CorneredUIView" customModule="Dizney" customModuleProvider="target">
+                        <rect key="frame" x="24" y="0.0" width="360" height="109"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="u8t-02-l0z" customClass="CorneredImageView" customModule="Dizney" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="u8t-02-l0z" secondAttribute="height" multiplier="1:1" id="SQ8-ZX-5Bi"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="seC-0V-Md5">
+                                <rect key="frame" x="125" y="13.5" width="219" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fresh food" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ve-A3-gXd">
+                                        <rect key="frame" x="0.0" y="0.0" width="219" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" name="text_primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16Z-ec-COL">
+                                        <rect key="frame" x="0.0" y="32" width="219" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" name="text_secondary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="RbS-ty-0Wf">
+                                        <rect key="frame" x="0.0" y="60.5" width="219" height="21.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12,000 IQD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yrz-Fl-c1N">
+                                                <rect key="frame" x="0.0" y="0.0" width="219" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" name="text_primary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="cell_background"/>
+                        <constraints>
+                            <constraint firstItem="u8t-02-l0z" firstAttribute="centerY" secondItem="WqX-Sc-YjZ" secondAttribute="centerY" id="5bc-8E-9Iu"/>
+                            <constraint firstItem="seC-0V-Md5" firstAttribute="leading" secondItem="u8t-02-l0z" secondAttribute="trailing" constant="16" id="Dgb-Bs-JSw"/>
+                            <constraint firstItem="seC-0V-Md5" firstAttribute="centerY" secondItem="u8t-02-l0z" secondAttribute="centerY" id="NxR-2e-g9Z"/>
+                            <constraint firstItem="u8t-02-l0z" firstAttribute="leading" secondItem="WqX-Sc-YjZ" secondAttribute="leading" id="fBK-rn-XLr"/>
+                            <constraint firstItem="u8t-02-l0z" firstAttribute="height" secondItem="WqX-Sc-YjZ" secondAttribute="height" id="oKh-UR-DbB"/>
+                            <constraint firstAttribute="trailing" secondItem="seC-0V-Md5" secondAttribute="trailing" constant="16" id="ooU-OH-zQX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="WqX-Sc-YjZ" secondAttribute="trailing" constant="24" id="4Ba-ub-OnB"/>
+                    <constraint firstItem="WqX-Sc-YjZ" firstAttribute="top" secondItem="ymw-nf-oCQ" secondAttribute="top" id="j9A-fF-uKU"/>
+                    <constraint firstItem="WqX-Sc-YjZ" firstAttribute="leading" secondItem="ymw-nf-oCQ" secondAttribute="leading" constant="24" id="mf8-eX-6ga"/>
+                    <constraint firstAttribute="bottom" secondItem="WqX-Sc-YjZ" secondAttribute="bottom" constant="4" id="xLQ-Ze-FFJ"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="408" height="113"/>
+            <connections>
+                <outlet property="imgView" destination="u8t-02-l0z" id="cFT-d3-Zcy"/>
+                <outlet property="lblDetails" destination="16Z-ec-COL" id="AcL-0G-V43"/>
+                <outlet property="lblPrice" destination="Yrz-Fl-c1N" id="ayM-M3-yW5"/>
+                <outlet property="lblTitle" destination="5ve-A3-gXd" id="uDZ-tp-HGQ"/>
+            </connections>
+            <point key="canvasLocation" x="140.57971014492756" y="274.88839285714283"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="food" width="768" height="461"/>
+        <namedColor name="cell_background">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_primary">
+            <color red="0.18400000035762787" green="0.20399999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_secondary">
+            <color red="0.34900000691413879" green="0.36500000953674316" blue="0.42399999499320984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

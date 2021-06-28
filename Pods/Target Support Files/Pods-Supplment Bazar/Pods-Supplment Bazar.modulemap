@@ -1,0 +1,6 @@
+framework module Pods_Supplment_Bazar {
+  umbrella header "Pods-Supplment Bazar-umbrella.h"
+
+  export *
+  module * { export * }
+}

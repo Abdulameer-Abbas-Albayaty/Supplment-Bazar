@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zbH-vk-Lfd" customClass="ShopCell" customModule="Supplment_Bazar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="500" height="327"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Z5Y-a1-EZ5">
+                <rect key="frame" x="0.0" y="0.0" width="500" height="327"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2f8-Te-UvV" customClass="CorneredUIView" customModule="Supplment_Bazar" customModuleProvider="target">
+                        <rect key="frame" x="4" y="4" width="492" height="319"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="karada group" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-Jy-2Ed" customClass="CorneredImageView" customModule="Supplment_Bazar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="492" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="250" constant="120" id="mW3-uQ-Wkr"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="P7l-el-vh5">
+                                <rect key="frame" x="16" y="224" width="460" height="79"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saj Alreef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-97-ctq" customClass="CareemNormal" customModule="Supplment_Bazar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="460" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                        <color key="textColor" name="text_primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baghdad - Karada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-nP-zLl" customClass="CareemBold" customModule="Supplment_Bazar" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="26" width="460" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <color key="textColor" name="text_primary"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KeK-2G-uyV">
+                                        <rect key="frame" x="0.0" y="57" width="460" height="22"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-hH-moB">
+                                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="22" id="JlM-qQ-zUQ"/>
+                                                    <constraint firstAttribute="height" constant="22" id="n7R-EW-JUh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIz-e9-DVn" customClass="CareemHint" customModule="Supplment_Bazar" customModuleProvider="target">
+                                                <rect key="frame" x="38" y="0.0" width="422" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <color key="textColor" name="text_secondary"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HSR-Jy-2Ed" firstAttribute="top" secondItem="2f8-Te-UvV" secondAttribute="top" id="4z8-tc-QRp"/>
+                            <constraint firstAttribute="trailing" secondItem="P7l-el-vh5" secondAttribute="trailing" constant="16" id="8Y2-EN-wcG"/>
+                            <constraint firstAttribute="trailing" secondItem="HSR-Jy-2Ed" secondAttribute="trailing" id="SOa-Yl-xmb"/>
+                            <constraint firstAttribute="bottom" secondItem="P7l-el-vh5" secondAttribute="bottom" constant="16" id="e1R-hV-ByJ"/>
+                            <constraint firstItem="P7l-el-vh5" firstAttribute="leading" secondItem="2f8-Te-UvV" secondAttribute="leading" constant="16" id="nSY-Jx-ovt"/>
+                            <constraint firstItem="HSR-Jy-2Ed" firstAttribute="leading" secondItem="2f8-Te-UvV" secondAttribute="leading" id="rAO-zD-cvE"/>
+                            <constraint firstItem="P7l-el-vh5" firstAttribute="top" secondItem="HSR-Jy-2Ed" secondAttribute="bottom" constant="8" symbolic="YES" id="rTt-Ps-YV0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="2f8-Te-UvV" secondAttribute="trailing" constant="4" id="5Ob-rF-6xg"/>
+                    <constraint firstAttribute="bottom" secondItem="2f8-Te-UvV" secondAttribute="bottom" constant="4" id="AbA-Kt-dEE"/>
+                    <constraint firstItem="2f8-Te-UvV" firstAttribute="leading" secondItem="Z5Y-a1-EZ5" secondAttribute="leading" constant="4" id="gMX-Qe-YsI"/>
+                    <constraint firstItem="2f8-Te-UvV" firstAttribute="top" secondItem="Z5Y-a1-EZ5" secondAttribute="top" constant="4" id="kj9-rV-0eJ"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="500" height="342"/>
+            <connections>
+                <outlet property="imgView" destination="HSR-Jy-2Ed" id="BNT-tz-3rV"/>
+                <outlet property="lblAddress" destination="gCf-nP-zLl" id="kNG-lR-fmn"/>
+                <outlet property="lblName" destination="OEb-97-ctq" id="CpQ-FF-bRS"/>
+                <outlet property="lblRate" destination="PIz-e9-DVn" id="7rQ-G3-JEH"/>
+            </connections>
+            <point key="canvasLocation" x="227.536231884058" y="140.95982142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="karada group" width="960" height="640"/>
+        <image name="star" width="19.333333969116211" height="18.333333969116211"/>
+        <namedColor name="text_primary">
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_secondary">
+            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="qC1-D1-0bR" customClass="NoDataView" customModule="Banan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="8mp-sC-i5h">
+                    <rect key="frame" x="20" y="329.5" width="374" height="297.5"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="information" translatesAutoresizingMaskIntoConstraints="NO" id="v8U-4V-HWO">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="140"/>
+                            <color key="tintColor" name="primary-dark"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="thX-vF-ONN"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dfyuioijhghjkljhljjlhasdf" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciJ-ii-p0J">
+                            <rect key="frame" x="0.0" y="180" width="374" height="27.5"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeV-9N-bVo" customClass="NoDataViewClearGrayButton" customModule="Banan" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="247.5" width="374" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="8gT-2Y-oed"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" title="hjfalhskdfas"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="wKV-RA-gN4"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="8mp-sC-i5h" firstAttribute="centerX" secondItem="qC1-D1-0bR" secondAttribute="centerX" id="GHo-ao-7Co"/>
+                <constraint firstItem="8mp-sC-i5h" firstAttribute="centerY" secondItem="qC1-D1-0bR" secondAttribute="centerY" constant="30" id="Kxv-uM-ynH"/>
+                <constraint firstItem="8mp-sC-i5h" firstAttribute="leading" secondItem="wKV-RA-gN4" secondAttribute="leading" constant="20" id="cuT-q8-8Av"/>
+                <constraint firstItem="wKV-RA-gN4" firstAttribute="trailing" secondItem="8mp-sC-i5h" secondAttribute="trailing" constant="20" id="xzs-Cs-nbp"/>
+            </constraints>
+            <connections>
+                <outlet property="mainImage" destination="v8U-4V-HWO" id="0pl-0e-U46"/>
+                <outlet property="messageLbl" destination="ciJ-ii-p0J" id="2W3-eE-PNn"/>
+                <outlet property="viewButton" destination="NeV-9N-bVo" id="pvp-i9-B8m"/>
+            </connections>
+            <point key="canvasLocation" x="54" y="177"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="information" width="256" height="256"/>
+        <namedColor name="background">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96470588235294119" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary-dark">
+            <color red="0.12941176470588237" green="0.75686274509803919" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
