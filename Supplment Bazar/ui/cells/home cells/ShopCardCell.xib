@@ -22,14 +22,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2f8-Te-UvV" customClass="CorneredUIView" customModule="Supplment_Bazar" customModuleProvider="target">
                         <rect key="frame" x="4" y="4" width="492" height="319"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="karada group" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-Jy-2Ed" customClass="CorneredImageView" customModule="Supplment_Bazar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="492" height="216"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-Jy-2Ed" customClass="CorneredImageView" customModule="Supplment_Bazar" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="492" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="120" id="mW3-uQ-Wkr"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="P7l-el-vh5">
-                                <rect key="frame" x="16" y="224" width="460" height="79"/>
+                                <rect key="frame" x="16" y="248" width="460" height="55"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saj Alreef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-97-ctq" customClass="CareemNormal" customModule="Supplment_Bazar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="460" height="24"/>
@@ -43,24 +43,6 @@
                                         <color key="textColor" name="text_primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="KeK-2G-uyV">
-                                        <rect key="frame" x="0.0" y="57" width="460" height="22"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="K3V-hH-moB">
-                                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="22" id="JlM-qQ-zUQ"/>
-                                                    <constraint firstAttribute="height" constant="22" id="n7R-EW-JUh"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIz-e9-DVn" customClass="CareemHint" customModule="Supplment_Bazar" customModuleProvider="target">
-                                                <rect key="frame" x="38" y="0.0" width="422" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" name="text_secondary"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -88,19 +70,13 @@
                 <outlet property="imgView" destination="HSR-Jy-2Ed" id="BNT-tz-3rV"/>
                 <outlet property="lblAddress" destination="gCf-nP-zLl" id="kNG-lR-fmn"/>
                 <outlet property="lblName" destination="OEb-97-ctq" id="CpQ-FF-bRS"/>
-                <outlet property="lblRate" destination="PIz-e9-DVn" id="7rQ-G3-JEH"/>
             </connections>
             <point key="canvasLocation" x="227.536231884058" y="140.95982142857142"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="karada group" width="960" height="640"/>
-        <image name="star" width="19.333333969116211" height="18.333333969116211"/>
         <namedColor name="text_primary">
             <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="text_secondary">
-            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

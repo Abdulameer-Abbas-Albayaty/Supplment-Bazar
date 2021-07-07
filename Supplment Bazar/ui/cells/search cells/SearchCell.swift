@@ -16,11 +16,9 @@ class SearchCell: UICollectionViewCell {
     
     func setup(data: ProductResponse) {
         lblTitle.text = data.name
-        lblPrice.text = "\(data.price ?? 0)"
-        lblDetails.text = data.about
+        lblPrice.text = data.price
+        lblDetails.text = data.description
         
-        if let img = data.image {
-            imgView.load(image: img)
-        }
+        imgView.setImage(data.image, placeholder: nil, showIndicator: true, completion: nil)
     }
 }

@@ -21,8 +21,8 @@ class ShoppingCenterHeader: UICollectionReusableView {
         lblAddress.text = data.address
         
         lblRating.text = data.rating ?? "0"
-        coverImageView.load(image: data.cover)
-        logo.load(image: data.logo)
+        coverImageView.setImage(data.cover, placeholder: nil, showIndicator: true, completion: nil)
+        logo.setImage(data.logo, placeholder: nil, showIndicator: true, completion: nil)
     }
     
 }

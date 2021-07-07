@@ -9,9 +9,9 @@ import Foundation
 
 class SearchRepo {
     
-    static func get(query: String,result: @escaping (SearchResponse?, String?) -> ()) {
+    static func get(query: String,result: @escaping ([ProductResponse]?, String?) -> ()) {
         let url = "\(HomeURL.search)?q=\(query)"
-        NetworkEngine.makeRequestWithBody(url: url, method: .get, body: Optional<Int>.none) { (res: GenericAPIResponse<SearchResponse>?, error) in
+        NetworkEngine.makeRequestWithBody(url: url, method: .get, body: Optional<Int>.none) { (res: GenericAPIResponse<[ProductResponse]>?, error) in
             result(res?.data, error)
         }
     }
@@ -19,7 +19,7 @@ class SearchRepo {
 
 class SearchViewModel: BaseViewModel {
     
-    func get(query: String,result: @escaping (SearchResponse?) -> ()) {
+    func get(query: String,result: @escaping ([ProductResponse]?) -> ()) {
         SearchRepo.get(query: query) { (res, err) in
             if let err = err {
                 self.error.value = err

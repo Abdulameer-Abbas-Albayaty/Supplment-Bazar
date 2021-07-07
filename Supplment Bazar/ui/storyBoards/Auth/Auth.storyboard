@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dizney Auth Navigation-->
+        <scene sceneID="bHR-7I-FZn">
+            <objects>
+                <navigationController storyboardIdentifier="login" automaticallyAdjustsScrollViewInsets="NO" id="rWC-1Z-Ltz" customClass="DizneyAuthNavigation" customModule="Supplment_Bazar" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="80R-3V-GFf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wA0-LT-LDD" kind="relationship" relationship="rootViewController" id="Yy0-oz-AQx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRd-32-Y0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="-193.52678571428569"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="Svp-YS-Wy7">
+            <objects>
+                <tableViewController id="wA0-LT-LDD" customClass="LoginViewController" customModule="Supplment_Bazar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2vn-0g-dQk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="background"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="mgY-Mw-kPH">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="528"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wue-Mi-Jq0">
+                                    <rect key="frame" x="24" y="148" width="366" height="112"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X14-K1-IhL" customClass="DizneyAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="Xgc-wD-y9o"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="phone-call"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3K8-Sx-Doo" customClass="DizneyAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="64" width="366" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="d5M-bU-5eS"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="lock"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZm-tP-Bn2" customClass="DizneyButton" customModule="Supplment_Bazar" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="341" width="366" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="bb1-JC-T8a"/>
+                                    </constraints>
+                                    <state key="normal" title="Sign in"/>
+                                    <connections>
+                                        <action selector="signButtonTapped:" destination="wA0-LT-LDD" eventType="touchUpInside" id="nkI-Za-gCb"/>
+                                    </connections>
+                                </button>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="git-8l-WXl">
+                                    <rect key="frame" x="86.5" y="409" width="241" height="33"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont have an account?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8h4-E4-6oY" customClass="CareemHint" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" name="text_secondary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8d-YW-tk9">
+                                            <rect key="frame" x="182" y="0.0" width="59" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <state key="normal" title="Sign up">
+                                                <color key="titleColor" name="primary"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="kdx-7g-NjJ" kind="show" id="vAF-mO-J5G"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bp7-TZ-hHc">
+                                    <rect key="frame" x="262" y="284" width="128" height="33"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <state key="normal" title="Forgot password">
+                                        <color key="titleColor" name="primary"/>
+                                    </state>
+                                </button>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="Ti7-Fw-Tg7">
+                                    <rect key="frame" x="157" y="24" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="eXm-LP-P0K"/>
+                                        <constraint firstAttribute="height" constant="100" id="oRv-cc-YP6"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" name="background"/>
+                            <constraints>
+                                <constraint firstItem="Ti7-Fw-Tg7" firstAttribute="top" secondItem="mgY-Mw-kPH" secondAttribute="top" constant="24" id="3eW-Mf-FsH"/>
+                                <constraint firstAttribute="trailing" secondItem="Bp7-TZ-hHc" secondAttribute="trailing" constant="24" id="EBz-qr-jcQ"/>
+                                <constraint firstItem="wue-Mi-Jq0" firstAttribute="top" secondItem="Ti7-Fw-Tg7" secondAttribute="bottom" constant="24" id="HqH-sT-E4K"/>
+                                <constraint firstItem="gZm-tP-Bn2" firstAttribute="leading" secondItem="mgY-Mw-kPH" secondAttribute="leading" constant="24" id="LP5-Py-bE0"/>
+                                <constraint firstItem="wue-Mi-Jq0" firstAttribute="leading" secondItem="mgY-Mw-kPH" secondAttribute="leading" constant="24" id="Mxc-Sp-Wqe"/>
+                                <constraint firstItem="gZm-tP-Bn2" firstAttribute="top" secondItem="Bp7-TZ-hHc" secondAttribute="bottom" constant="24" id="SRg-8e-sYK"/>
+                                <constraint firstItem="git-8l-WXl" firstAttribute="top" secondItem="gZm-tP-Bn2" secondAttribute="bottom" constant="24" id="UZY-VS-2UM"/>
+                                <constraint firstItem="Bp7-TZ-hHc" firstAttribute="trailing" secondItem="3K8-Sx-Doo" secondAttribute="trailing" id="WHC-e7-qjh"/>
+                                <constraint firstAttribute="trailing" secondItem="gZm-tP-Bn2" secondAttribute="trailing" constant="24" id="bLT-Zw-VWQ"/>
+                                <constraint firstAttribute="trailing" secondItem="wue-Mi-Jq0" secondAttribute="trailing" constant="24" id="dLp-r8-k8A"/>
+                                <constraint firstItem="git-8l-WXl" firstAttribute="centerX" secondItem="mgY-Mw-kPH" secondAttribute="centerX" id="il2-W6-1EQ"/>
+                                <constraint firstItem="Bp7-TZ-hHc" firstAttribute="top" secondItem="wue-Mi-Jq0" secondAttribute="bottom" constant="24" id="lKB-6M-4xy"/>
+                                <constraint firstItem="Ti7-Fw-Tg7" firstAttribute="centerX" secondItem="mgY-Mw-kPH" secondAttribute="centerX" id="yKf-fX-zcM"/>
+                            </constraints>
+                        </view>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="wA0-LT-LDD" id="Ic5-hV-C6Z"/>
+                            <outlet property="delegate" destination="wA0-LT-LDD" id="PeP-X8-3Cn"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Login" id="Hn3-rX-bcm"/>
+                    <connections>
+                        <outlet property="signButton" destination="gZm-tP-Bn2" id="ohz-Ll-Jhh"/>
+                        <outlet property="txtMobileNumber" destination="X14-K1-IhL" id="xyI-Ut-fWR"/>
+                        <outlet property="txtPassword" destination="3K8-Sx-Doo" id="zqA-AN-L5j"/>
+                        <segue destination="aRY-vf-Ynm" kind="show" identifier="toOTP" id="8gJ-rx-vFU"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7jt-WN-gUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="886.95652173913049" y="-196.20535714285714"/>
+        </scene>
+        <!--Sign up-->
+        <scene sceneID="ltu-GB-4Kn">
+            <objects>
+                <tableViewController id="kdx-7g-NjJ" customClass="SignupViewController" customModule="Supplment_Bazar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5N6-Tt-B4K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="background"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="ahT-yl-0Lx">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="445"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="4vP-fr-bfO">
+                                    <rect key="frame" x="24" y="80" width="366" height="164"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uHb-Ao-kwr" customClass="TasheelAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="ziW-kc-Bqf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="10"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="phone-call"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="N7Q-m4-551" customClass="TasheelAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="60" width="366" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="Pr8-GM-nFW"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="lock"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tEj-5s-e65" customClass="TasheelAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="120" width="366" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="wzZ-dE-KFZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="lock"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YD-BM-vFC" customClass="DizneyButton" customModule="Supplment_Bazar" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="268" width="366" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="GC9-vG-Zau"/>
+                                    </constraints>
+                                    <state key="normal" title="Sign up"/>
+                                    <connections>
+                                        <action selector="signButtonTapped:" destination="kdx-7g-NjJ" eventType="touchUpInside" id="QUn-Ig-Wdm"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="background"/>
+                            <constraints>
+                                <constraint firstItem="2YD-BM-vFC" firstAttribute="leading" secondItem="ahT-yl-0Lx" secondAttribute="leading" constant="24" id="HCB-i3-e1U"/>
+                                <constraint firstAttribute="trailing" secondItem="2YD-BM-vFC" secondAttribute="trailing" constant="24" id="LIx-gG-ED4"/>
+                                <constraint firstAttribute="trailing" secondItem="4vP-fr-bfO" secondAttribute="trailing" constant="24" id="LgK-0i-J6k"/>
+                                <constraint firstItem="4vP-fr-bfO" firstAttribute="top" secondItem="ahT-yl-0Lx" secondAttribute="top" constant="80" id="R9f-ie-3KT"/>
+                                <constraint firstItem="2YD-BM-vFC" firstAttribute="top" secondItem="4vP-fr-bfO" secondAttribute="bottom" constant="24" id="Wik-K1-TQO"/>
+                                <constraint firstItem="4vP-fr-bfO" firstAttribute="leading" secondItem="ahT-yl-0Lx" secondAttribute="leading" constant="24" id="c6j-UZ-tfQ"/>
+                            </constraints>
+                        </view>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="kdx-7g-NjJ" id="Xzy-Qg-cUv"/>
+                            <outlet property="delegate" destination="kdx-7g-NjJ" id="ErX-cy-7dN"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Sign up" id="Jfr-I6-z2d"/>
+                    <connections>
+                        <outlet property="signup" destination="2YD-BM-vFC" id="PbC-NF-39J"/>
+                        <outlet property="txtMobileNumber" destination="uHb-Ao-kwr" id="vBf-cg-13S"/>
+                        <outlet property="txtPassword" destination="N7Q-m4-551" id="yXr-8h-em3"/>
+                        <outlet property="txtPasswordConfirm" destination="tEj-5s-e65" id="cRz-Hy-byE"/>
+                        <segue destination="aRY-vf-Ynm" kind="show" identifier="toOtp" id="mlw-4n-Z6k"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EQY-R2-Abf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="115.94202898550725" y="525.66964285714289"/>
+        </scene>
+        <!--OTP-->
+        <scene sceneID="02Q-cs-Q6B">
+            <objects>
+                <tableViewController id="aRY-vf-Ynm" customClass="VerifyOTPViewController" customModule="Supplment_Bazar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="GVZ-IQ-uca">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="background"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="1tw-gp-e3i">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="316"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6Mw-GR-P61">
+                                    <rect key="frame" x="24" y="80" width="366" height="81.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OTP code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vSb-c2-pDk" customClass="CareemNormal" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" name="text_secondary"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="6 digits" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUQ-YO-zrS" customClass="TasheelAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="37.5" width="366" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="mi2-10-xPC"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="ASCIICapableNumberPad" textContentType="one-time-code"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kK2-gQ-Q29" customClass="DizneyButton" customModule="Supplment_Bazar" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="239.5" width="366" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="zOB-4Q-REe"/>
+                                    </constraints>
+                                    <state key="normal" title="Next"/>
+                                    <connections>
+                                        <action selector="verifyTapped:" destination="aRY-vf-Ynm" eventType="touchUpInside" id="foA-eW-mCU"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQ1-ck-kpW">
+                                    <rect key="frame" x="303" y="185.5" width="87" height="30"/>
+                                    <state key="normal" title="Resend SMS">
+                                        <color key="titleColor" name="primary"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="resendOTP:" destination="aRY-vf-Ynm" eventType="touchUpInside" id="Yi5-GT-ijc"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="background"/>
+                            <constraints>
+                                <constraint firstItem="kK2-gQ-Q29" firstAttribute="top" secondItem="SQ1-ck-kpW" secondAttribute="bottom" constant="24" id="GHN-8v-YhO"/>
+                                <constraint firstItem="6Mw-GR-P61" firstAttribute="top" secondItem="1tw-gp-e3i" secondAttribute="top" constant="80" id="NEd-KF-Kic"/>
+                                <constraint firstAttribute="trailing" secondItem="kK2-gQ-Q29" secondAttribute="trailing" constant="24" id="NRD-h3-2b6"/>
+                                <constraint firstItem="6Mw-GR-P61" firstAttribute="leading" secondItem="1tw-gp-e3i" secondAttribute="leading" constant="24" id="Qis-Jl-jQV"/>
+                                <constraint firstItem="kK2-gQ-Q29" firstAttribute="leading" secondItem="1tw-gp-e3i" secondAttribute="leading" constant="24" id="bFu-H9-pR0"/>
+                                <constraint firstAttribute="trailing" secondItem="6Mw-GR-P61" secondAttribute="trailing" constant="24" id="d5e-HV-Ejp"/>
+                                <constraint firstAttribute="trailing" secondItem="SQ1-ck-kpW" secondAttribute="trailing" constant="24" id="uZB-f5-Ng9"/>
+                                <constraint firstItem="SQ1-ck-kpW" firstAttribute="top" secondItem="6Mw-GR-P61" secondAttribute="bottom" constant="24" id="xmG-PT-je3"/>
+                            </constraints>
+                        </view>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="aRY-vf-Ynm" id="EfS-yV-wv2"/>
+                            <outlet property="delegate" destination="aRY-vf-Ynm" id="UuB-JN-yqp"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="OTP" id="Jsf-Qj-4BO"/>
+                    <connections>
+                        <outlet property="txtOTP" destination="zUQ-YO-zrS" id="dDF-JC-q9g"/>
+                        <outlet property="verifyButton" destination="kK2-gQ-Q29" id="Uod-iv-mhs"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XbP-1b-Sv5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="526"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8gJ-rx-vFU"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="lock" width="128" height="128"/>
+        <image name="logo" width="1024" height="913"/>
+        <image name="phone-call" width="64" height="64"/>
+        <namedColor name="background">
+            <color red="0.96100002527236938" green="0.96100002527236938" blue="0.9649999737739563" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.29803921568627451" green="0.49411764705882355" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_secondary">
+            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

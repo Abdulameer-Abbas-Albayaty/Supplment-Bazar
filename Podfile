@@ -7,9 +7,11 @@ target 'Supplment Bazar' do
 
   # Pods for Supplment Bazar
 
-pod 'SDWebImage', '~> 5.0'
-
+  pod 'Kingfisher', '~> 6.1.1'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
+pod 'FSPagerView'
+pod 'SVProgressHUD'
+
 
 end

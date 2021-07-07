@@ -7,15 +7,43 @@
 
 import UIKit
 import CoreLocation
+import SVProgressHUD
 
-class BaseViewModel: NSObject {
-
-    var error: LiveData<String?> = LiveData(nil)
-
-    required override init() {
-
+class BaseCartViewController<T: BaseViewModel>: BaseViewController<T> {
+    
+    fileprivate let cartButtonHeight: CGFloat = 70
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let button = UIButton()
+        button.tintColor = .white
+        button.setImage(#imageLiteral(resourceName: "cart"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .primary
+        
+        view.addSubview(button)
+        NSLayoutConstraint.activate([
+            button.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            button.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -24),
+            button.heightAnchor.constraint(equalToConstant: cartButtonHeight),
+            button.widthAnchor.constraint(equalToConstant: cartButtonHeight)
+        ])
+        button.bringSubviewToFront(view)
+        button.layer.cornerRadius = cartButtonHeight / 2
+        button.layer.shadowRadius = 1
+        button.layer.shadowOpacity = 0.2
+        button.layer.shadowOffset = CGSize(width: 2, height: 2)
+        
+        button.addTarget(self, action: #selector(handleCartTapped), for: .touchUpInside)
     }
-
+    
+    @objc fileprivate func handleCartTapped() {
+        present(Navigator.toCart(), animated: true, completion: nil)
+    }
+    
 }
 
 class BaseViewController<T: BaseViewModel>: UIViewController, LocationSVD {
@@ -59,19 +87,30 @@ class BaseViewController<T: BaseViewModel>: UIViewController, LocationSVD {
                 }
                 return
             }
-            self.pop.config(messgae: error, image: #imageLiteral(resourceName: "error"), actionTitle: nil)
+            self.pop.configCancelable(messgae: error, image: #imageLiteral(resourceName: "error"))
         }
     }
 
-//    func startWaiting() {
-//        SVProgressHUD.setDefaultMaskType(.clear)
-//        SVProgressHUD.show()
-//    }
-//
-//    func endWaiting() {
-//        SVProgressHUD.dismiss()
-//    }
-
+    func startWaiting() {
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.setForegroundColor(.primary)
+        SVProgressHUD.setBackgroundColor(UIColor.primary.withAlphaComponent(0.5))
+        SVProgressHUD.setRingThickness(3)
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                SVProgressHUD.setDefaultStyle(.dark)
+            } else {
+                SVProgressHUD.setDefaultStyle(.light)
+            }
+        }
+        SVProgressHUD.setFont(AppFont.title)
+        SVProgressHUD.show(withStatus: "waiting".getLocalized())
+    }
+    
+    func endWaiting() {
+        SVProgressHUD.dismiss()
+    }
+    
     func addBarWaitingIndicator() {
         waitingIndicator.startAnimating()
         navigationItem.setRightBarButton(UIBarButtonItem(customView: waitingIndicator), animated: true)
@@ -107,31 +146,6 @@ class BaseViewController<T: BaseViewModel>: UIViewController, LocationSVD {
 
 }
 
-class BaseCollectionViewController<T: BaseViewModel>: UICollectionViewController {
-
-    var viewModel :T!
-    let pop = Bundle.main.loadNibNamed("PopUp", owner: nil, options: nil)?.first as! PopUp
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        pop.addToView(view)
-        viewModel = T()
-        viewModel.error.observer { (error) in
-            if let error = error {
-                if error == tokenExpire {
-//                    self.forceLogout()
-                    return
-                }
-                self.pop.config(messgae: error, image: #imageLiteral(resourceName: "error"), actionTitle: nil)
-            }
-        }
-    }
-
-
-}
-
-
 class AuthBaseViewController<T: BaseViewModel>: UITableViewController {
 
     var viewModel :T!
@@ -163,7 +177,7 @@ class AuthBaseViewController<T: BaseViewModel>: UITableViewController {
 //            self.forceLogout()
             return
         }
-        self.pop.config(messgae: error, image: #imageLiteral(resourceName: "error"), actionTitle: nil)
+        self.pop.configCancelable(messgae: error, image: #imageLiteral(resourceName: "error"))
     }
 
 }
@@ -205,17 +219,28 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, Location
 //            self.forceLogout()
             return
         }
-        self.pop.config(messgae: error, image: #imageLiteral(resourceName: "error"), actionTitle: nil)
+        self.pop.configCancelable(messgae: error, image: #imageLiteral(resourceName: "error"))
     }
 
-//    func startWaiting() {
-//        SVProgressHUD.setDefaultMaskType(.clear)
-//        SVProgressHUD.show()
-//    }
-//
-//    func endWaiting() {
-//        SVProgressHUD.dismiss()
-//    }
+    func startWaiting() {
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.setForegroundColor(.primary)
+        SVProgressHUD.setBackgroundColor(UIColor.primary.withAlphaComponent(0.5))
+        SVProgressHUD.setRingThickness(3)
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                SVProgressHUD.setDefaultStyle(.dark)
+            } else {
+                SVProgressHUD.setDefaultStyle(.light)
+            }
+        }
+        SVProgressHUD.setFont(AppFont.title)
+        SVProgressHUD.show(withStatus: "waiting".getLocalized())
+    }
+    
+    func endWaiting() {
+        SVProgressHUD.dismiss()
+    }
 
     func addBarWaitingIndicator() {
         waitingIndicator.startAnimating()

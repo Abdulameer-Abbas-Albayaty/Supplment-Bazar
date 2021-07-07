@@ -19,6 +19,7 @@ enum RequestMethod: String {
     case post = "post"
     case patch = "patch"
     case delete = "delete"
+    case put = "put"
 }
 
 class NetworkEngine {
@@ -57,6 +58,53 @@ class NetworkEngine {
                     if let data = data {
                         NetworkLogger.printResponse(response: data)
                         let decoder = try? JSONDecoder().decode(GenericAPIResponse<R>.self, from: data)
+                        if let result = decoder {
+                            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+                                completion(nil,"connection_failure".getLocalized())
+                                return
+                            }
+                            if 200...300 ~= statusCode {
+                                 completion(result,nil)
+                            } else if statusCode == 401 {
+                                if UserUD.isLogin {
+                                    completion(nil,tokenExpire)
+                                } else {
+                                    completion(nil, result.message)
+                                }
+                            } else if statusCode == 511 {
+                                completion(nil,tokenExpire)
+                            } else {
+                                completion(nil,result.message)
+                            }
+                        } else {
+                            completion(nil,"connection_failure".getLocalized())
+                        }
+                    }
+                }
+            }.resume()
+        }
+    }
+    
+    static func makeMetaRequestWithBody<R: Decodable, X: Encodable>(url: String,method: RequestMethod,body: X? = nil, completion:@escaping ((GenericMetaAPIResponse<R>?,String?) -> Void)) {
+        if var request = buildRequest(url: url,method: method) {
+            if method == RequestMethod.post, let body = body {
+                let encode = try? JSONEncoder().encode(body)
+                request.httpBody = encode
+            }
+            NetworkLogger.printRequest(request: request)
+            URLSession.shared.dataTask(with: request) { (data, response, error) in
+                DispatchQueue.main.sync {
+                    if let error = error as NSError? {
+                        if error.code == NSURLErrorNotConnectedToInternet {
+                            completion(nil,"internet_failure".getLocalized())
+                        } else {
+                            completion(nil,"connection_failure".getLocalized())
+                        }
+                        return
+                    }
+                    if let data = data {
+                        NetworkLogger.printResponse(response: data)
+                        let decoder = try? JSONDecoder().decode(GenericMetaAPIResponse<R>.self, from: data)
                         if let result = decoder {
                             guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
                                 completion(nil,"connection_failure".getLocalized())

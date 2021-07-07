@@ -27,3 +27,28 @@ class LiveData<T> {
         listener?(value)
     }
 }
+
+class MutableLiveData<T> {
+    typealias Observe = (T) -> Void
+    private var observe : Observe?
+    private let thread : DispatchQueue
+
+    var property : T? {
+        willSet {
+            if let value = newValue {
+                thread.async {
+                    self.observe?(value)
+                }
+            }
+        }
+    }
+
+    func observe(observer: Observe?) {
+        self.observe = observer
+    }
+
+    init(_ value: T? = nil, thread dispatcherThread: DispatchQueue = .main) {
+        self.thread = dispatcherThread
+        self.property = value
+    }
+}

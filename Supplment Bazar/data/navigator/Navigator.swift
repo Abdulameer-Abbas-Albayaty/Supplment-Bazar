@@ -14,6 +14,8 @@ struct StoryBoardIDS {
     static let productDetails = "product_details"
     static let shops = "shops"
     static let products = "products_vc"
+    static let brands = "brands"
+    static let cart = "cart"
 }
 
 struct StartPoints {
@@ -22,7 +24,7 @@ struct StartPoints {
     // if tips not shown
     static let tips = "tips"
     // auth
-    static let auth = "auth"
+    static let auth = "login"
 }
 
 // story boards
@@ -62,7 +64,23 @@ class Navigator {
     
     static func toProducts(sectionId: String) -> ProductsViewController {
         let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.products) as! ProductsViewController
-        
+        vc.sectionId = sectionId
+        return vc
+    }
+    
+    static func toProducts(categoryId: String) -> ProductsViewController {
+        let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.products) as! ProductsViewController
+        vc.categryId = categoryId
+        return vc
+    }
+    
+    static func toBrands() -> UIViewController {
+        let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.brands) 
+        return vc
+    }
+    
+    static func toCart() -> UIViewController {
+        let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.cart)
         return vc
     }
     

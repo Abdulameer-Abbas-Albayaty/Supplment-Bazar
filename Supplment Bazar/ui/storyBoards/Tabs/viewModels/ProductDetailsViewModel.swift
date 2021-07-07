@@ -17,21 +17,13 @@ class ProductDetailsRepo {
     }
 }
 
+struct AddCartRequest: Encodable {
+    let store_id: String
+    let product_id: String
+    let quantity: Int
+}
+
 class ProductDetailsViewModel: BaseViewModel {
-    
-    fileprivate let coreData = CartDao()
-        
-    func insertToCart(data: ProductResponse, image: Data, quantity: Int, result: @escaping (String?) -> Void) {
-        coreData.insert(data: data, image: image, quantity: quantity) { (err) in
-            if let err = err {
-                self.error.value = err
-                result(nil)
-                return
-            } else {
-                result("Item has been added successfully")
-            }
-        }
-    }
     
     func get(slug: String, result: @escaping (ProductDetailsResponse?) -> ()) {
         ProductDetailsRepo.get(slug: slug) { (res, err) in
@@ -41,6 +33,17 @@ class ProductDetailsViewModel: BaseViewModel {
                 return
             }
             result(res)
+        }
+    }
+    
+    func add(body: AddCartRequest, result: @escaping (String?) -> ()) {
+        NetworkEngine.makeRequestWithBody(url: CartUrl.add, method: .post, body: body) { (res: GenericAPIResponse<String>?, err) in
+            if let err = err {
+                self.error.value = err
+                result(nil)
+                return
+            }
+            result(res?.message)
         }
     }
     

@@ -7,45 +7,50 @@
 
 import Foundation
 
+struct GetCartResponse: Decodable {
+    let id: String
+    let amount: String
+    let price: String
+    let quantity: Int
+    let products: ProductResponse
+}
+
 class CartViewModel: BaseViewModel {
     
-    fileprivate let coreData = CartDao()
-    var items = LiveData<[Cart]>([])
-    var totalAmount : Double {
-        get {
-            calculateAmount()
-        }
-    }
+    var items = MutableLiveData<[GetCartResponse]?>()
     
-    required init() {
-        super.init()
-        
-        self.items.value = coreData.fetchAll() ?? []
-    }
-    
-    fileprivate func calculateAmount() -> Double {
-        var amount = Double()
-        items.value.forEach { (cart) in
-            amount += (cart.price * Double(cart.quantity))
-        }
-        return amount
-    }
-    
-    func deleteItem(id: String) {
-        coreData.delete(id: id) { (sucess) in
-            if sucess {
-                self.items.value = self.coreData.fetchAll() ?? []
+    func getCart() {
+        NetworkEngine.makeRequestWithBody(url: CartUrl.get, method: .get, body: Optional<Int>.none) { (res: GenericAPIResponse<[GetCartResponse]>?, err) in
+            if let err = err {
+                self.error.value = err
+                self.items.property = nil
+                return
             }
+            self.items.property = res?.data
         }
     }
     
-    func changeQuantity(id: String, quantity: Int) {
-        coreData.changeQuantity(id: id, quantity: quantity) { (success) in
-            if success {
-                self.items.value = self.coreData.fetchAll() ?? []
-            } else {
-                print("error")
+    func delete(id: String, result: @escaping (String?) -> ()) {
+        let url = "\(CartUrl.delete)\(id)"
+        NetworkEngine.makeRequestWithBody(url: url, method: .delete, body: Optional<Int>.none) { (res: GenericAPIResponse<[GetCartResponse]>?, err) in
+            if let err = err {
+                self.error.value = err
+                self.items.property = nil
+                return
             }
+            self.items.property = res?.data
+        }
+    }
+    
+    func edit(id: String) {
+        let url = "\(CartUrl.edit)\(id)/edit"
+        NetworkEngine.makeRequestWithBody(url: url, method: .put, body: Optional<Int>.none) { (res: GenericAPIResponse<[GetCartResponse]>?, err) in
+            if let err = err {
+                self.error.value = err
+                self.items.property = nil
+                return
+            }
+            self.items.property = res?.data
         }
     }
     

@@ -56,6 +56,22 @@ class TopCorneredUIView: UIView {
     
 }
 
+class SiccorUIView: UIView {
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        layer.shadowOffset = CGSize(width: -8, height: -8)
+        layer.shadowRadius = 2
+        layer.shadowOpacity = 0.2
+        
+        DispatchQueue.main.async {
+            self.roundCorners(corners: [.topLeft, .bottomRight], radius: 16)
+        }
+    }
+    
+}
+
 class CornerView: UIView {
     
     override init(frame: CGRect) {

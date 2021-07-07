@@ -18,10 +18,8 @@ class ItemCell: UICollectionViewCell {
     var favouriteAction: (() -> ())?
     
     func setup(data: ProductResponse) {
-        if let img = data.image {
-            imgView.load(image: img)
-        }
-        lblPrice.text = "\(data.price ?? 0)"
+        imgView.setImage(data.image, placeholder: nil, showIndicator: true, completion: nil)
+        lblPrice.text = data.price
         lblName.text = data.name
     }
     

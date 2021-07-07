@@ -15,7 +15,8 @@ class PopUp: UIView {
     @IBOutlet weak var actionButton: DizneyButton!
     @IBOutlet weak var cancelButton: UIButton!
     
-    fileprivate var actionTapped: (() -> ())?
+    @IBOutlet weak var mainView: CornerView!
+    var action: (() -> ())?
     
     func addToView(_ view: UIView) {
         view.addSubview(self)
@@ -28,31 +29,50 @@ class PopUp: UIView {
         self.isHidden = true
     }
     
-    func config(messgae: String, image: UIImage, actionTitle: String?) {
+    func configCancelable(messgae: String, image: UIImage) {
+        self.cancelButton.isHidden = false
+        self.actionButton.isHidden = true
         lblMessage.text = messgae
         imgView.image = image
-        if let title = actionTitle {
-            actionButton.setTitle(title: title)
-            actionButton.isHidden = false
-        }
         self.isHidden = false
+        
+        animation()
     }
     
-    func configWithAction(messgae: String, image: UIImage, actionTitle: String, action: (() -> ())?) {
+    func configActionOnly(messgae: String, image: UIImage, actionTitle: String, action: @escaping () -> ()) {
+        self.cancelButton.isHidden = true
+        self.actionButton.isHidden = false
         lblMessage.text = messgae
         imgView.image = image
         actionButton.setTitle(title: actionTitle)
-        actionButton.addTarget(self, action: #selector(handleActionTapped), for: .touchUpInside)
-        actionButton.isHidden = false
-        if let action = action {
-            self.actionTapped = action
-        }
+        self.action = action
         self.isHidden = false
+        
+        animation()
+    }
+    
+    func configWithAction(messgae: String, image: UIImage, actionTitle: String, action: @escaping () -> ()) {
+        lblMessage.text = messgae
+        imgView.image = image
+        actionButton.setTitle(title: actionTitle)
+        self.cancelButton.isHidden = false
+        actionButton.isHidden = false
+        self.action = action
+        self.isHidden = false
+        
+        animation()
+    }
+    
+    func animation() {
+        mainView.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+        UIView.animate(withDuration: 0.5) {
+            self.mainView.transform = .identity
+        }
     }
     
     @objc
     fileprivate func handleActionTapped() {
-        if let action = actionTapped {
+        if let action = action {
             action()
         }
     }

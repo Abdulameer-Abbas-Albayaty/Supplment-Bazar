@@ -14,6 +14,10 @@ class DizneyButton: UIButton {
     private lazy var buttonString: NSAttributedString? = nil
     private var attributes: [NSAttributedString.Key: Any]?
     
+    override public class var layerClass: Swift.AnyClass {
+        return CAGradientLayer.self
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -48,6 +52,13 @@ class DizneyButton: UIButton {
         contentVerticalAlignment = .center
         
         setupIndicator()
+        
+        if let grad = self.layer as? CAGradientLayer {
+            grad.colors = [UIColor.primary.cgColor ,UIColor.primaryDark.cgColor]
+            grad.endPoint = CGPoint(x: 0, y: 0)
+            grad.cornerRadius = self.frame.height / 2
+            grad.frame = self.frame
+        }
     }
     
     func setTitle(title:String) {
@@ -80,74 +91,6 @@ class DizneyButton: UIButton {
     }
 
 }
-
-class WhiteButton: UIButton {
-    
-    let activityIndicator = UIActivityIndicatorView()
-    private lazy var buttonString: NSAttributedString? = nil
-    private var attributes: [NSAttributedString.Key: Any]?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        setupButton()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        
-        setupButton()
-    }
-    
-    fileprivate func setupButton() {
-        backgroundColor = UIColor.whiteButton
-        setTitleColor(UIColor.white, for: .normal)
-        attributes = [.font : AppFont.button ,NSAttributedString.Key.foregroundColor: UIColor.textPrimary]
-        buttonString = NSAttributedString(string: currentTitle ?? "", attributes: attributes)
-        setAttributedTitle(buttonString, for: .normal)
-        
-        layer.cornerRadius = self.frame.height / 2
-        layer.shadowOpacity = 0.3
-        layer.shadowRadius = 2
-        layer.shadowOffset = CGSize(width: 2, height: 2)
-        
-        contentHorizontalAlignment = .center
-        contentVerticalAlignment = .center
-        
-        setupIndicator()
-    }
-    
-    func setTitle(title:String) {
-        let t = NSAttributedString(string: title, attributes: attributes)
-        setAttributedTitle(t, for: .normal)
-    }
-    
-    fileprivate func setupIndicator() {
-        activityIndicator.style = .white
-        activityIndicator.frame = self.bounds
-        activityIndicator.hidesWhenStopped = true
-        self.addSubview(activityIndicator)
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        activityIndicator.stopAnimating()
-    }
-    
-    func showActivityIndicator() {
-        setTitle(nil, for: .normal)
-        setAttributedTitle(nil, for: .normal)
-        activityIndicator.startAnimating()
-        self.isEnabled = false
-    }
-    
-    func hideActivityIndicator() {
-        setAttributedTitle(buttonString, for: .normal)
-        activityIndicator.stopAnimating()
-        self.isEnabled = true
-    }
-
-}
-
 
 class CircularButton: UIButton {
     

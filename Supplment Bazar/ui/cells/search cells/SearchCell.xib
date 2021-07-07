@@ -11,17 +11,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I1s-FW-ANM" customClass="SearchCell" customModule="Dizney" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="I1s-FW-ANM" customClass="SearchCell" customModule="Supplment_Bazar" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="408" height="113"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ymw-nf-oCQ">
                 <rect key="frame" x="0.0" y="0.0" width="408" height="113"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqX-Sc-YjZ" customClass="CorneredUIView" customModule="Dizney" customModuleProvider="target">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WqX-Sc-YjZ" customClass="CorneredUIView" customModule="Supplment_Bazar" customModuleProvider="target">
                         <rect key="frame" x="24" y="0.0" width="360" height="109"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="u8t-02-l0z" customClass="CorneredImageView" customModule="Dizney" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8t-02-l0z" customClass="CorneredImageView" customModule="Supplment_Bazar" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="109" height="109"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="u8t-02-l0z" secondAttribute="height" multiplier="1:1" id="SQ8-ZX-5Bi"/>
@@ -85,15 +85,14 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="food" width="768" height="461"/>
         <namedColor name="cell_background">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="text_primary">
-            <color red="0.18400000035762787" green="0.20399999618530273" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="text_secondary">
-            <color red="0.34900000691413879" green="0.36500000953674316" blue="0.42399999499320984" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

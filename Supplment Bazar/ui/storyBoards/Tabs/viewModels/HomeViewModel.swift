@@ -7,6 +7,16 @@
 
 import Foundation
 
+class BaseViewModel: NSObject {
+
+    var error: LiveData<String?> = LiveData(nil)
+
+    required override init() {
+
+    }
+
+}
+
 class HomeViewModel: BaseViewModel {
     
     func getHome(result: @escaping (HomeSections?) -> ()) {

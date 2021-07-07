@@ -13,6 +13,18 @@ struct GenericAPIResponse<T: Decodable>: Decodable {
     let data: T?
 }
 
+struct GenericMetaAPIResponse<T: Decodable>: Decodable {
+    let success: Bool
+    let message: String?
+    let data: T?
+    let meta: MetaData
+}
+
+struct MetaData: Decodable {
+    let current_page: Int
+    let last_page: Int
+}
+
 struct HomeSections : Decodable {
     let sections: [HomeResponse]
 }
@@ -25,16 +37,16 @@ struct HomeResponse: Decodable {
 }
 
 struct ProductResponse: Decodable {
-    let id: String?
+    let id: String
     let name: String?
     let logo: String?
     
-    let price: Double?
+    let price: String?
     let description: String?
     let image: String?
     
-    let about: String?
     let rating: String?
+    let cover: String?
 }
 
 

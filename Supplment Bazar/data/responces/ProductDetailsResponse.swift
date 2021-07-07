@@ -8,10 +8,10 @@
 import Foundation
 
 struct ProductDetailsResponse: Decodable {
-    let id: String?
+    let id: String
     let name: String?
     
-    let price: Double?
+    let price: String?
     let description: String?
     let image: String?
     
@@ -43,6 +43,7 @@ struct ProductOptions: Decodable {
 }
 
 struct StoreData: Decodable {
+    let id: String
     let name: String
     let logo: String?
     let cover: String?

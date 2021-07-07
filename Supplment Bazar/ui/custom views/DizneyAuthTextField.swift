@@ -22,14 +22,20 @@ class DizneyAuthTextField: UITextField {
         super.init(coder: coder)
         
         font = AppFont.textField
-        textColor = UIColor.textPrimary        
+        textColor = UIColor.textPrimary
         borderStyle = .none
-        layer.cornerRadius = 16
+        
+        layer.cornerRadius = 8
         layer.borderWidth = 1
-        layer.borderColor = UIColor.lightGray.cgColor
+        layer.borderColor = UIColor.textSecondary.cgColor
 
         backgroundColor = UIColor.clear
-        padding = UIEdgeInsets(top: 0, left: 32, bottom: 0, right: 16)
+        if Locale.current.languageCode == "ar" {
+            padding = UIEdgeInsets(top: 2, left: 16, bottom: 2, right: 48)
+        } else {
+            padding = UIEdgeInsets(top: 2, left: 48, bottom: 2, right: 16)
+        }
+        
     }
     
     override open func textRect(forBounds bounds: CGRect) -> CGRect {
@@ -47,16 +53,14 @@ class DizneyAuthTextField: UITextField {
     func updateView() {
         if let image = image {
             leftViewMode = UITextField.ViewMode.always
-
             let imageView = UIImageView(image: image)
             imageView.contentMode = .scaleAspectFit
             let view = UIView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             view.addSubview(imageView)
+            imageView.frame = CGRect(x: Locale.current.languageCode == "ar" ? -8 : 16, y: ((view.frame.height / 2) - 10), width: 20.0, height: 20.0)
             imageView.contentMode = .scaleAspectFit
             imageView.image = image
-            imageView.tintColor = UIColor.lightGray
-            imageView.frame = CGRect(x: padding?.left ?? 10, y: 0, width: 20, height: 20)
-            imageView.center = view.center
+            imageView.tintColor = UIColor.textSecondary
             leftView = view
         } else {
             leftViewMode = UITextField.ViewMode.never

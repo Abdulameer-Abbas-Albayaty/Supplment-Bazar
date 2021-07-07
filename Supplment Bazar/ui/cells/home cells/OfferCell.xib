@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Uoq-bk-UxG" customClass="OfferCell" customModule="Supplment_Bazar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="262"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GyY-gg-wEb">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="262"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TFJ-Zc-3CD" customClass="CorneredImageView" customModule="Supplment_Bazar" customModuleProvider="target">
+                        <rect key="frame" x="8" y="4" width="386" height="254"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="TFJ-Zc-3CD" firstAttribute="leading" secondItem="GyY-gg-wEb" secondAttribute="leading" constant="8" id="U8K-5b-ZMs"/>
+                    <constraint firstAttribute="trailing" secondItem="TFJ-Zc-3CD" secondAttribute="trailing" constant="8" id="V3r-2X-sof"/>
+                    <constraint firstItem="TFJ-Zc-3CD" firstAttribute="top" secondItem="GyY-gg-wEb" secondAttribute="top" constant="4" id="cOD-F2-k9J"/>
+                    <constraint firstAttribute="bottom" secondItem="TFJ-Zc-3CD" secondAttribute="bottom" constant="4" id="oDb-4y-o5T"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="402" height="262"/>
+            <connections>
+                <outlet property="imgView" destination="TFJ-Zc-3CD" id="JLF-xr-pPP"/>
+            </connections>
+            <point key="canvasLocation" x="311.59420289855075" y="89.732142857142847"/>
+        </collectionViewCell>
+    </objects>
+</document>
