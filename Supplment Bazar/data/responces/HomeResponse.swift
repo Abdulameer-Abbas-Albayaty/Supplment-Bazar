@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct GenericMessageResponse: Decodable {
+    let message: String?
+}
+
 struct GenericAPIResponse<T: Decodable>: Decodable {
     let success: Bool
     let message: String?
@@ -42,6 +46,7 @@ struct ProductResponse: Decodable {
     let logo: String?
     
     let price: String?
+    let currency: String?
     let description: String?
     let image: String?
     

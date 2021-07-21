@@ -5,28 +5,32 @@
 //  Created by Ameer on 06/06/2021.
 //
 
-import Foundation
+import UIKit
 
-class BaseViewModel: NSObject {
+class BaseViewModel {
 
     var error: LiveData<String?> = LiveData(nil)
+    var view: UIViewController!
 
-    required override init() {
-
+    required init(v: UIViewController) {
+        self.view = v
     }
 
 }
 
 class HomeViewModel: BaseViewModel {
     
-    func getHome(result: @escaping (HomeSections?) -> ()) {
+    func getHome(result: @escaping (HomeSections) -> ()) {
+        self.view.startWaiting()
         NetworkEngine.makeRequestWithBody(url: HomeURL.home, method: .get, body: Optional<Int>.none) { (res: GenericAPIResponse<HomeSections>?, err) in
+            self.view.endWaiting()
             if let err = err {
                 self.error.value = err
-                result(nil)
                 return
             }
-            result(res?.data)
+            if let data = res?.data {
+                result(data)
+            }
         }
     }
     

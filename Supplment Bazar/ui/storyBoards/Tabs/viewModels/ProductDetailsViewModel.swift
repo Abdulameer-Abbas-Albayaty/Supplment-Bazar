@@ -21,12 +21,15 @@ struct AddCartRequest: Encodable {
     let store_id: String
     let product_id: String
     let quantity: Int
+    let product_type_id: Int
 }
 
 class ProductDetailsViewModel: BaseViewModel {
     
     func get(slug: String, result: @escaping (ProductDetailsResponse?) -> ()) {
+        self.view.startWaiting()
         ProductDetailsRepo.get(slug: slug) { (res, err) in
+            self.view.endWaiting()
             if let err = err {
                 self.error.value = err
                 result(nil)
@@ -37,7 +40,9 @@ class ProductDetailsViewModel: BaseViewModel {
     }
     
     func add(body: AddCartRequest, result: @escaping (String?) -> ()) {
+        self.view.startWaiting()
         NetworkEngine.makeRequestWithBody(url: CartUrl.add, method: .post, body: body) { (res: GenericAPIResponse<String>?, err) in
+            self.view.endWaiting()
             if let err = err {
                 self.error.value = err
                 result(nil)

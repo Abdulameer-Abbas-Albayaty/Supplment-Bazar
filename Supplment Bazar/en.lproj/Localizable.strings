@@ -1,0 +1,57 @@
+/* 
+  Localizable.strings
+  Supplment Bazar
+
+  Created by Ameer on 21/07/2021.
+  
+*/
+"cancel" = "Cancel";
+"next" = "Next";
+
+"connection_failure" = "Connection failure, Please try again later.";
+"internet_failure" = "Check the internet connection, and try again.";
+
+// logout
+"logout" = "Logout";
+"logout_question" = "Do you want to logout?";
+
+"open_settings" = "Open Settings";
+
+// validations
+"phone_number_count" = "Mobile number must be 10 digits at least";
+"password_count" = "Password must be 8-16 digits";
+"password_mismatch" = "Password must equal to confirmation password field";
+"otp_count" = "OTP must be 6 digits";
+
+"password_changes" = "Password has been changes succesfully";
+"session_expired" = "Session expired";
+"session_expired_details" = "Your account is active in another device";
+
+"ok" = "Ok";
+"share" = "Share";
+"about" = "About";
+"retry" = "Retry";
+"IQD" = "IQD";
+
+// provinces
+"All" = "All";
+"BAGHDAD" = "Baghdad";
+"ERBIL" = "Erbil";
+"ANBAR" = "Anbar";
+"BABIL" = "Babil";
+"NAJAF" = "Najaf";
+"BASRA" = "Basra";
+"HALABJA" = "Halabja";
+"DOHUK" = "Dohuk";
+"QADISIYAH" = "Qadisiyah";
+"DIYALA" = "Diyala";
+"DHIQAR" = "Dhiqar";
+"SULAYMANIYAH" = "Sulaymaniyah";
+"SALADIN" = "Saladin";
+"KIRKUK" = "Kirkuk";
+"KARBALA" = "Karbala";
+"MUTHANNA" = "Muthana";
+"MAYSAN" = "Maysan";
+"WASIT" = "Wasit";
+"NINEVEH" = "Nineveh";
+"OTHER" = "Other";

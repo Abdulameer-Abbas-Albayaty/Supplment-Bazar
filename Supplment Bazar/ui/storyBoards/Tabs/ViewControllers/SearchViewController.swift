@@ -78,8 +78,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//            self.navigationController?.pushViewController(Navigator.toProductDetails(slug: response?.products?[indexPath.row].slug ?? ""), animated: true)
-        
+        self.navigationController?.pushViewController(Navigator.toProductDetails(id: items[indexPath.row].id), animated: true)
     }
 
 }

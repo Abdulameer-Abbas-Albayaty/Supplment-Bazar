@@ -12,7 +12,7 @@ class CorneredImageView: UIImageView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         
-        layer.cornerRadius = 16
+        layer.cornerRadius = 8
     }
     
 }

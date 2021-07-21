@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileViewController: BaseTableViewController<HomeViewModel> {
+class ProfileViewController: BaseTableViewController<ProfileViewModel> {
 
     @IBOutlet weak var lblUserMobile: UILabel!
     @IBOutlet weak var lblUserName: UILabel!
@@ -42,8 +42,8 @@ class ProfileViewController: BaseTableViewController<HomeViewModel> {
 //                }
 //            }
 //        } else {
-//            self.lblUserName.text = CustomerInfoUD.name
-//            self.lblUserMobile.text = CustomerInfoUD.mobile
+            self.lblUserName.text = CustomerInfoUD.name
+            self.lblUserMobile.text = CustomerInfoUD.mobile
 //            self.userImage.sd_setImage(with: URL(string: CustomerInfoUD.pic ?? ""))
 //        }
     }
@@ -85,11 +85,13 @@ class ProfileViewController: BaseTableViewController<HomeViewModel> {
     @IBAction func logoutTapped(_ sender: Any) {
         let alert = UIAlertController(title: "logout_question".getLocalized(), message: nil, preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "logout".getLocalized(), style: .destructive, handler: { (_) in
-//            self.viewModel.logout { (res) in
-//                if let _ = res {
-//                    self.logout()
-//                }
-//            }
+            self.startWaiting()
+            self.viewModel.logout { (res) in
+                self.endWaiting()
+                if let _ = res {
+                    self.logout()
+                }
+            }
         }))
         alert.addAction(UIAlertAction(title: "cancel".getLocalized(), style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)

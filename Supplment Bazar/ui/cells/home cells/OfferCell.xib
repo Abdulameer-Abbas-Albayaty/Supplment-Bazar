@@ -18,16 +18,18 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TFJ-Zc-3CD" customClass="CorneredImageView" customModule="Supplment_Bazar" customModuleProvider="target">
-                        <rect key="frame" x="8" y="4" width="386" height="254"/>
+                        <rect key="frame" x="16" y="8" width="370" height="246"/>
                     </imageView>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="TFJ-Zc-3CD" firstAttribute="leading" secondItem="GyY-gg-wEb" secondAttribute="leading" constant="8" id="U8K-5b-ZMs"/>
-                    <constraint firstAttribute="trailing" secondItem="TFJ-Zc-3CD" secondAttribute="trailing" constant="8" id="V3r-2X-sof"/>
-                    <constraint firstItem="TFJ-Zc-3CD" firstAttribute="top" secondItem="GyY-gg-wEb" secondAttribute="top" constant="4" id="cOD-F2-k9J"/>
-                    <constraint firstAttribute="bottom" secondItem="TFJ-Zc-3CD" secondAttribute="bottom" constant="4" id="oDb-4y-o5T"/>
+                    <constraint firstAttribute="bottom" secondItem="TFJ-Zc-3CD" secondAttribute="bottom" constant="8" id="MIm-fS-THA"/>
+                    <constraint firstItem="TFJ-Zc-3CD" firstAttribute="leading" secondItem="GyY-gg-wEb" secondAttribute="leading" constant="16" id="U8K-5b-ZMs"/>
+                    <constraint firstAttribute="trailing" secondItem="TFJ-Zc-3CD" secondAttribute="trailing" constant="16" id="V3r-2X-sof"/>
+                    <constraint firstItem="TFJ-Zc-3CD" firstAttribute="top" secondItem="GyY-gg-wEb" secondAttribute="top" constant="8" id="cOD-F2-k9J"/>
                 </constraints>
             </collectionViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <size key="customSize" width="402" height="262"/>
             <connections>
                 <outlet property="imgView" destination="TFJ-Zc-3CD" id="JLF-xr-pPP"/>

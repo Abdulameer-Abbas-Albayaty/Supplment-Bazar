@@ -41,7 +41,11 @@ class BaseCartViewController<T: BaseViewModel>: BaseViewController<T> {
     }
     
     @objc fileprivate func handleCartTapped() {
-        present(Navigator.toCart(), animated: true, completion: nil)
+        if UserUD.isLogin {
+            present(Navigator.toCart(), animated: true, completion: nil)
+        } else {
+            present(Navigator.toAuth(), animated: true, completion: nil)
+        }
     }
     
 }
@@ -65,12 +69,22 @@ class BaseViewController<T: BaseViewModel>: UIViewController, LocationSVD {
         pop.addToView(view)
         emptyView.setupNoDataView(mainView: view)
 
-        viewModel = T()
+        viewModel = T(v: self)
         viewModel.error.observer { (error) in
             if let error = error {
                 self.showError(error: error)
             }
         }
+    }
+    
+    func configViewModel<V: BaseViewModel>() -> V {
+        let viewModel = V(v: self)
+        viewModel.error.observer { (err) in
+            if let err = err {
+                self.showError(error: err)
+            }
+        }
+        return viewModel
     }
 
     func askLocation() {
@@ -82,7 +96,7 @@ class BaseViewController<T: BaseViewModel>: UIViewController, LocationSVD {
         if let error = error {
             if error == tokenExpire {
                 if error == tokenExpire {
-//                    self.forceLogout()
+                    self.forceLogout()
                     return
                 }
                 return
@@ -91,25 +105,25 @@ class BaseViewController<T: BaseViewModel>: UIViewController, LocationSVD {
         }
     }
 
-    func startWaiting() {
-        SVProgressHUD.setDefaultMaskType(.clear)
-        SVProgressHUD.setForegroundColor(.primary)
-        SVProgressHUD.setBackgroundColor(UIColor.primary.withAlphaComponent(0.5))
-        SVProgressHUD.setRingThickness(3)
-        if #available(iOS 12.0, *) {
-            if self.traitCollection.userInterfaceStyle == .dark {
-                SVProgressHUD.setDefaultStyle(.dark)
-            } else {
-                SVProgressHUD.setDefaultStyle(.light)
-            }
-        }
-        SVProgressHUD.setFont(AppFont.title)
-        SVProgressHUD.show(withStatus: "waiting".getLocalized())
-    }
-    
-    func endWaiting() {
-        SVProgressHUD.dismiss()
-    }
+//    func startWaiting() {
+//        SVProgressHUD.setDefaultMaskType(.clear)
+//        SVProgressHUD.setForegroundColor(.primary)
+//        SVProgressHUD.setBackgroundColor(UIColor.primary.withAlphaComponent(0.5))
+//        SVProgressHUD.setRingThickness(3)
+//        if #available(iOS 12.0, *) {
+//            if self.traitCollection.userInterfaceStyle == .dark {
+//                SVProgressHUD.setDefaultStyle(.dark)
+//            } else {
+//                SVProgressHUD.setDefaultStyle(.light)
+//            }
+//        }
+//        SVProgressHUD.setFont(AppFont.title)
+//        SVProgressHUD.show(withStatus: "waiting".getLocalized())
+//    }
+//
+//    func endWaiting() {
+//        SVProgressHUD.dismiss()
+//    }
     
     func addBarWaitingIndicator() {
         waitingIndicator.startAnimating()
@@ -160,11 +174,11 @@ class AuthBaseViewController<T: BaseViewModel>: UITableViewController {
             pop.addToView(view)
         }
 
-        viewModel = T()
+        viewModel = T(v: self)
         viewModel.error.observer { (error) in
             if let error = error {
                 if error == tokenExpire {
-//                    self.forceLogout()
+                    self.forceLogout()
                     return
                 }
                 self.showError(error: error)
@@ -206,7 +220,7 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, Location
 
         emptyView.setupNoDataView(mainView: view)
 
-        viewModel = T()
+        viewModel = T(v: self)
         viewModel.error.observer { (error) in
             if let error = error {
                 self.showError(error: error)
@@ -216,31 +230,31 @@ class BaseTableViewController<T: BaseViewModel>: UITableViewController, Location
 
     func showError(error: String) {
         if error == tokenExpire {
-//            self.forceLogout()
+            self.forceLogout()
             return
         }
         self.pop.configCancelable(messgae: error, image: #imageLiteral(resourceName: "error"))
     }
 
-    func startWaiting() {
-        SVProgressHUD.setDefaultMaskType(.clear)
-        SVProgressHUD.setForegroundColor(.primary)
-        SVProgressHUD.setBackgroundColor(UIColor.primary.withAlphaComponent(0.5))
-        SVProgressHUD.setRingThickness(3)
-        if #available(iOS 12.0, *) {
-            if self.traitCollection.userInterfaceStyle == .dark {
-                SVProgressHUD.setDefaultStyle(.dark)
-            } else {
-                SVProgressHUD.setDefaultStyle(.light)
-            }
-        }
-        SVProgressHUD.setFont(AppFont.title)
-        SVProgressHUD.show(withStatus: "waiting".getLocalized())
-    }
-    
-    func endWaiting() {
-        SVProgressHUD.dismiss()
-    }
+//    func startWaiting() {
+//        SVProgressHUD.setDefaultMaskType(.clear)
+//        SVProgressHUD.setForegroundColor(.primary)
+//        SVProgressHUD.setBackgroundColor(UIColor.primary.withAlphaComponent(0.5))
+//        SVProgressHUD.setRingThickness(3)
+//        if #available(iOS 12.0, *) {
+//            if self.traitCollection.userInterfaceStyle == .dark {
+//                SVProgressHUD.setDefaultStyle(.dark)
+//            } else {
+//                SVProgressHUD.setDefaultStyle(.light)
+//            }
+//        }
+//        SVProgressHUD.setFont(AppFont.title)
+//        SVProgressHUD.show(withStatus: "waiting".getLocalized())
+//    }
+//    
+//    func endWaiting() {
+//        SVProgressHUD.dismiss()
+//    }
 
     func addBarWaitingIndicator() {
         waitingIndicator.startAnimating()

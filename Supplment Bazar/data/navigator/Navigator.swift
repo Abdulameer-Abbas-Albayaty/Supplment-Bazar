@@ -16,14 +16,13 @@ struct StoryBoardIDS {
     static let products = "products_vc"
     static let brands = "brands"
     static let cart = "cart"
+    static let stores = "stores"
 }
 
 struct StartPoints {
     // if loged in
     static let tabbar = "tabbar"
-    // if tips not shown
     static let tips = "tips"
-    // auth
     static let auth = "login"
 }
 
@@ -32,6 +31,7 @@ struct StoryBoards {
     static let tips = "Tips"
     static let auth = "Auth"
     static let tabs = "Main"
+    static let order = "Order"
 }
 
 class Navigator {
@@ -56,21 +56,16 @@ class Navigator {
         return vc
     }
     
-    static func toProductDetails(slug: String) -> ProductDetailsViewController {
+    static func toProductDetails(id: String) -> ProductDetailsViewController {
         let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.productDetails) as! ProductDetailsViewController
-        vc.productId = slug
+        vc.productId = id
         return vc
     }
     
-    static func toProducts(sectionId: String) -> ProductsViewController {
+    static func toProducts(id: String, type: HomeKeys) -> ProductsViewController {
         let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.products) as! ProductsViewController
-        vc.sectionId = sectionId
-        return vc
-    }
-    
-    static func toProducts(categoryId: String) -> ProductsViewController {
-        let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.products) as! ProductsViewController
-        vc.categryId = categoryId
+        vc.id = id
+        vc.type = type
         return vc
     }
     
@@ -80,7 +75,12 @@ class Navigator {
     }
     
     static func toCart() -> UIViewController {
-        let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.cart)
+        let vc = UIStoryboard(name: StoryBoards.order, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.cart)
+        return vc
+    }
+    
+    static func toStores() -> UIViewController {
+        let vc = UIStoryboard(name: StoryBoards.tabs, bundle: nil).instantiateViewController(withIdentifier: StoryBoardIDS.stores)
         return vc
     }
     

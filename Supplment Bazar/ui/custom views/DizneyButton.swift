@@ -43,7 +43,7 @@ class DizneyButton: UIButton {
         buttonString = NSAttributedString(string: currentTitle ?? "", attributes: attributes)
         setAttributedTitle(buttonString, for: .normal)
         
-        layer.cornerRadius = self.frame.height / 2
+        layer.cornerRadius = 8
         layer.shadowOpacity = 0.2
         layer.shadowRadius = 2
         layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -52,13 +52,12 @@ class DizneyButton: UIButton {
         contentVerticalAlignment = .center
         
         setupIndicator()
-        
-        if let grad = self.layer as? CAGradientLayer {
-            grad.colors = [UIColor.primary.cgColor ,UIColor.primaryDark.cgColor]
-            grad.endPoint = CGPoint(x: 0, y: 0)
-            grad.cornerRadius = self.frame.height / 2
-            grad.frame = self.frame
-        }
+//        if let grad = self.layer as? CAGradientLayer {
+//            grad.colors = [UIColor.primary.cgColor ,UIColor.primaryDark.cgColor]
+//            grad.endPoint = CGPoint(x: 0, y: 0)
+//            grad.cornerRadius = 8
+//            grad.frame = self.frame
+//        }
     }
     
     func setTitle(title:String) {
@@ -133,7 +132,7 @@ class PlusMinusButton: UIButton {
     }
     
     fileprivate func setupButton() {
-        layer.cornerRadius = 10
+        layer.cornerRadius = 8
         layer.shadowOpacity = 0.2
         layer.shadowRadius = 2
         layer.shadowOffset = CGSize(width: 2, height: 2)

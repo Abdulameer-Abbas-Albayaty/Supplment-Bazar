@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SVProgressHUD
 
 extension UIViewController {
     
@@ -41,24 +42,45 @@ extension UIViewController {
             app.window?.rootViewController = self
         }
     }
+
+}
+
+extension UIViewController {
     
-//    func userDefaultLogout() {
-//        UserUD.logout()
-//        CustomerInfoUD.logout()
-//        ChatUserUD.logout()
-//    }
-//    
-//    func forceLogout() {
-//        userDefaultLogout()
-//        let okAction = UIAlertAction(title: "ok".getLocalized(), style: .destructive) { (_) in
-//            Navigator.toTips().changeRoot()
-//        }
-//        self.showAlert("session_expired".getLocalized(), "session_expired_details".getLocalized(), [okAction])
-//    }
-//    
-//    func logout() {
-//        userDefaultLogout()
-//        Navigator.toTips().changeRoot()
-//    }
+    func forceLogout() {
+        UserUD.logout()
+        CustomerInfoUD.logout()
+        let okAction = UIAlertAction(title: "ok".getLocalized(), style: .destructive) { (_) in
+            Navigator.toTabs().changeRoot()
+        }
+        self.showAlert("session_expired".getLocalized(), "session_expired_details".getLocalized(), [okAction])
+    }
+    
+    func logout() {
+        UserUD.logout()
+        CustomerInfoUD.logout()
+        Navigator.toTabs().changeRoot()
+    }
+    
+    func startWaiting() {
+        SVProgressHUD.setDefaultMaskType(.clear)
+        SVProgressHUD.setForegroundColor(.primary)
+        SVProgressHUD.setBackgroundColor(UIColor.primary.withAlphaComponent(0.5))
+        SVProgressHUD.setRingThickness(3)
+        if #available(iOS 12.0, *) {
+            if self.traitCollection.userInterfaceStyle == .dark {
+                SVProgressHUD.setDefaultStyle(.dark)
+            } else {
+                SVProgressHUD.setDefaultStyle(.light)
+            }
+        }
+        SVProgressHUD.setFont(AppFont.title)
+        SVProgressHUD.show(withStatus: "waiting".getLocalized())
+    }
+    
+    func endWaiting() {
+        SVProgressHUD.dismiss()
+    }
+
     
 }

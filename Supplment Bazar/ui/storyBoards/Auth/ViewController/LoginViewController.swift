@@ -37,12 +37,16 @@ class LoginViewController: AuthBaseViewController<LoginViewModel> {
             self.signButton.hideActivityIndicator()
             if let res = res {
                 if res.is_verified {
-                    Navigator.toTabs().changeRoot()
+                    self.dismiss(animated: true, completion: nil)
                 } else {
                     self.performSegue(withIdentifier: toOTP, sender: mobileNumber)
                 }
             }
         }
+    }
+    
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

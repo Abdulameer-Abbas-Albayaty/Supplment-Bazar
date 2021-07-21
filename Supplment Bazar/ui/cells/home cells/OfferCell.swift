@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import FSPagerView
 
-class OfferCell: FSPagerViewCell {
+class OfferCell: UICollectionViewCell {
     
     @IBOutlet weak var imgView: CorneredImageView!
     

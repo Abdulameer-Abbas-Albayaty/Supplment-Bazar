@@ -24,12 +24,9 @@ class DizneyAuthTextField: UITextField {
         font = AppFont.textField
         textColor = UIColor.textPrimary
         borderStyle = .none
-        
         layer.cornerRadius = 8
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.textSecondary.cgColor
-
-        backgroundColor = UIColor.clear
+        backgroundColor = UIColor.secondaryBackground
+        
         if Locale.current.languageCode == "ar" {
             padding = UIEdgeInsets(top: 2, left: 16, bottom: 2, right: 48)
         } else {

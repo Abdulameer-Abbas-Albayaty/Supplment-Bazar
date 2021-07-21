@@ -1,0 +1,65 @@
+/* 
+  Localizable.strings
+  Supplment Bazar
+
+  Created by Ameer on 21/07/2021.
+  
+*/
+"about" = "حول";
+
+"ANBAR" = "انبار";
+"BABIL" = "بابل";
+"BAGHDAD" = "بغداد";
+"BASRA" = "بصرة";
+"DHIQAR" = "ذي قار";
+"DIYALA" = "ديالى";
+"DOHUK" = "دهوك";
+"ERBIL" = "اربيل";
+"HALABJA" = "حلبجة";
+"KARBALA" = "كربلاء";
+"KIRKUK" = "كركوك";
+"MAYSAN" = "ميسان";
+"MUTHANNA" = "مثنى";
+"NAJAF" = "نجف";
+"NINEVEH" = "نينوى";
+"QADISIYAH" = "قادسية";
+"SALADIN" = "صلاح الدين";
+"SULAYMANIYAH" = "سليمانية";
+"WASIT" = "واسط";
+
+"cancel" = "الغاء";
+"change_password" = "تغيير كلمة المرور";
+"connection_failure" = "فشل في الاتصال, اعد المحاولة لاحقا.";
+
+
+"full_name" = "الاسم الكامل";
+"internet_failure" = "يرجى التحقق من الاتصال بالانترنت والمحاولة لاحقا.";
+"IQD" = "د.ع";
+"location_permission_denied" = "يرجى تشغيل الموقع لاكمال العملية";
+
+"logout" = "تسجيل خروج";
+"logout_question" = "هل تريد تسجيل الخروج؟";
+
+"mobile_number" = "رقم الهاتف";
+"next" = "التالي";
+"ok" = "حسنا";
+"open_settings" = "فتح الاعدادات";
+"otp_count" = "الرمز يجب ان يكون ٦ ارقام";
+"password_changes" = "تم تغيير الرمز بنجاح";
+"password_count" = "كلمة المرور يتكون من ٨-١٦ حرفا";
+"password_mismatch" = "حقل تأكيد الرمز يجب ان تكون مشابه لحقل الرمز";
+"phone_number_count" = "رقم الموبايل يتكون من ١٠ ارقام او اكثر";
+
+"retry" = "اعادة المحاولة";
+
+"search" = "بحث";
+"search_here" = "ابحث هنا";
+
+"session_expired" = "انتهى مدة الجلسة";
+"session_expired_details" = "حسابك مفعل في جهاز اخر";
+
+/* (No Comment) */
+"share" = "مشاركة";
+
+"version" = "نسخة";
+"waiting" = "يرجى الانتظار";

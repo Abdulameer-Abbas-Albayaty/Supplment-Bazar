@@ -11,12 +11,11 @@ class ProductsViewController: BaseViewController<ProductViewModel> {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var sectionId: String?
-    var categryId: String?
+    var id: String?
+    var type: HomeKeys?
     
     fileprivate var page = 1
     fileprivate var isPaginationEnabled = false
-    
     fileprivate var products = [ProductResponse]()
     
     override func viewDidLoad() {
@@ -38,10 +37,19 @@ class ProductsViewController: BaseViewController<ProductViewModel> {
     }
     
     fileprivate func callProducts() {
-        if let sectionId = sectionId {
-            viewModel.getBySectionId(page: page, sectionId: sectionId)
-        } else if let catId = categryId {
-            viewModel.getByCategory(page: page, categoryId: catId)
+        guard let id = id else {return}
+        guard let type = type else {return}
+        switch type {
+        case .brands:
+            viewModel.getByBrand(page: page, brandId: id)
+        case .products:
+            viewModel.getBySectionId(page: page, sectionId: id)
+        case .stores:
+            viewModel.getByStore(page: page, storeId: id)
+        case .categories:
+            viewModel.getByCategory(page: page, categoryId: id)
+        case .offers:
+            break
         }
     }
 
@@ -75,6 +83,10 @@ extension ProductsViewController: UICollectionViewDelegate, UICollectionViewData
             page += 1
             callProducts()
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.navigationController?.pushViewController(Navigator.toProductDetails(id: products[indexPath.row].id), animated: true)
     }
     
 }

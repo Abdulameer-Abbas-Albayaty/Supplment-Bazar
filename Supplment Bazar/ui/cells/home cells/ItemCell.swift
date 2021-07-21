@@ -19,7 +19,7 @@ class ItemCell: UICollectionViewCell {
     
     func setup(data: ProductResponse) {
         imgView.setImage(data.image, placeholder: nil, showIndicator: true, completion: nil)
-        lblPrice.text = data.price
+        lblPrice.text = "\(data.price ?? "") \(data.currency ?? "")"
         lblName.text = data.name
     }
     

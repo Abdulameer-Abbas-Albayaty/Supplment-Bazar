@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,8 +21,16 @@
                     <color key="textColor" name="text_primary"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow-point-to-right" translatesAutoresizingMaskIntoConstraints="NO" id="QF9-Ag-Jmu">
+                    <rect key="frame" x="392" y="19.5" width="14" height="14"/>
+                    <color key="tintColor" name="text_secondary"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="14" id="Ybm-HL-gCG"/>
+                        <constraint firstAttribute="height" constant="14" id="bZV-au-yV5"/>
+                    </constraints>
+                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kKe-3c-nhq">
-                    <rect key="frame" x="343" y="11.5" width="55" height="30"/>
+                    <rect key="frame" x="335" y="11.5" width="55" height="30"/>
                     <state key="normal" title="View All">
                         <color key="titleColor" name="primary"/>
                     </state>
@@ -33,10 +41,12 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="hLc-Y4-XIW"/>
             <constraints>
+                <constraint firstItem="QF9-Ag-Jmu" firstAttribute="leading" secondItem="kKe-3c-nhq" secondAttribute="trailing" constant="2" id="3EC-q4-BBr"/>
                 <constraint firstItem="pAh-WV-101" firstAttribute="leading" secondItem="GSb-H4-hDd" secondAttribute="leading" constant="16" id="73p-Ov-oij"/>
                 <constraint firstItem="kKe-3c-nhq" firstAttribute="centerY" secondItem="pAh-WV-101" secondAttribute="centerY" id="I1c-UH-c8t"/>
                 <constraint firstItem="pAh-WV-101" firstAttribute="centerY" secondItem="GSb-H4-hDd" secondAttribute="centerY" id="L1h-Ea-w2u"/>
-                <constraint firstAttribute="trailing" secondItem="kKe-3c-nhq" secondAttribute="trailing" constant="16" id="MbE-hZ-feB"/>
+                <constraint firstAttribute="trailing" secondItem="QF9-Ag-Jmu" secondAttribute="trailing" constant="8" id="diF-4E-ZbF"/>
+                <constraint firstItem="QF9-Ag-Jmu" firstAttribute="centerY" secondItem="GSb-H4-hDd" secondAttribute="centerY" id="ruj-Vw-DIf"/>
             </constraints>
             <connections>
                 <outlet property="lblTitle" destination="pAh-WV-101" id="Bvn-PW-01t"/>
@@ -45,11 +55,15 @@
         </collectionReusableView>
     </objects>
     <resources>
+        <image name="arrow-point-to-right" width="64" height="64"/>
         <namedColor name="primary">
-            <color red="0.066666666666666666" green="0.53333333333333333" blue="0.47843137254901963" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.29803921568627451" green="0.49411764705882355" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="text_primary">
             <color red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="text_secondary">
+            <color red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

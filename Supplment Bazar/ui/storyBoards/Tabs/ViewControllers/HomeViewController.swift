@@ -40,22 +40,21 @@ class HomeViewController: BaseCartViewController<HomeViewModel> {
     
     fileprivate func callAPI() {
         viewModel.getHome { sections in
-            if let secs = sections {
-                self.response = secs.sections
-                self.collectionView.reloadData()
-            }
+            self.response = sections.sections
+            self.collectionView.reloadData()
         }
     }
     
     func routeTo(_ id: String,_ type: HomeKeys) {
         switch type {
         case .brands:
-            break
-//            self.navigationController?.pushViewController(Navigator.toBrands(), animated: true)
+            self.navigationController?.pushViewController(Navigator.toProducts(id: id, type: .brands), animated: true)
         case .categories:
-            self.navigationController?.pushViewController(Navigator.toProducts(categoryId: id), animated: true)
+            self.navigationController?.pushViewController(Navigator.toProducts(id: id, type: .categories), animated: true)
         case .products:
-            self.navigationController?.pushViewController(Navigator.toProductDetails(slug: id), animated: true)
+            self.navigationController?.pushViewController(Navigator.toProductDetails(id: id), animated: true)
+        case .stores:
+            print("view all stores")
         default:
             break
         }
@@ -100,7 +99,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: offers_cell_id, for: indexPath) as! OffersCell
             cell.items = response[indexPath.section].section_data ?? []
             cell.selectItem = { id in
-                self.navigationController?.pushViewController(Navigator.toProductDetails(slug: id), animated: true)
+                self.navigationController?.pushViewController(Navigator.toProductDetails(id: id), animated: true)
             }
             return cell
         }
@@ -129,6 +128,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if response[indexPath.section].section_type == HomeKeys.stores.rawValue {
+            self.navigationController?.pushViewController(Navigator.toProducts(id: response[indexPath.row].section_id, type: .stores), animated: true)
         }
     }
     
@@ -145,13 +145,23 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let headerData = response[indexPath.section]
         header.setup(title: headerData.section_title)
         header.viewAllAction = {
-            if headerData.section_type == HomeKeys.brands.rawValue {
-                self.navigationController?.pushViewController(Navigator.toBrands(), animated: true)
-            } else if headerData.section_type == HomeKeys.products.rawValue {
-                self.navigationController?.pushViewController(Navigator.toProducts(sectionId: headerData.section_id), animated: true)
-            }
+            self.viewAllTapped(section: headerData)
         }
         return header
+    }
+    
+    func viewAllTapped(section: HomeResponse) {
+        switch section.section_type {
+        case HomeKeys.brands.rawValue:
+            self.navigationController?.pushViewController(Navigator.toBrands(), animated: true)
+        case HomeKeys.products.rawValue:
+            self.navigationController?.pushViewController(Navigator.toProducts(id: section.section_id, type: .products), animated: true)
+        case HomeKeys.stores.rawValue:
+            print("view all stores")
+            self.navigationController?.pushViewController(Navigator.toStores(), animated: true)
+        default:
+            break
+        }
     }
     
 }

@@ -23,7 +23,7 @@ class CorneredUIView: UIView {
     
     func setupUI() {
         backgroundColor = UIColor.secondaryBackground
-        layer.cornerRadius = 16
+        layer.cornerRadius = 8
         layer.shadowOffset = CGSize(width: 1, height: 1)
         layer.shadowRadius = 1
         layer.shadowOpacity = 0.2
@@ -87,10 +87,10 @@ class CornerView: UIView {
     }
     
     func setupUI() {
-        layer.cornerRadius = 16
+        layer.cornerRadius = 8
         layer.shadowOffset = CGSize(width: 1, height: 1)
         layer.shadowRadius = 1
-        layer.shadowOpacity = 0.2
+        layer.shadowOpacity = 0.1
     }
     
 }
@@ -102,4 +102,25 @@ extension UIView {
         mask.path = path.cgPath
         self.layer.mask = mask
     }
+}
+
+class CornerSView: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        setupUI()
+    }
+    
+    func setupUI() {
+        backgroundColor = UIColor.secondaryBackground
+        layer.cornerRadius = 8
+    }
+    
 }

@@ -50,3 +50,16 @@ class BoundryLabel: UILabel {
     }
     
 }
+
+class BorderedLabel: UILabel {
+ 
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        layer.cornerRadius = 8
+        layer.borderWidth = 0.8
+        layer.borderColor = UIColor.primary.cgColor
+        clipsToBounds = true
+    }
+    
+}

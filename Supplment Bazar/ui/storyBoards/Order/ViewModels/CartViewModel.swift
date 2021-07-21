@@ -8,19 +8,36 @@
 import Foundation
 
 struct GetCartResponse: Decodable {
+    let items: [CartData]
+    let total_cart_price: String
+}
+
+struct CartData: Decodable {
     let id: String
     let amount: String
     let price: String
     let quantity: Int
     let products: ProductResponse
+    let options: OptionData
+}
+
+struct OptionData: Decodable {
+    let flavor: String
+    let size: String
+}
+
+struct ChangeQuantityBody: Encodable {
+    let quantity: Int
 }
 
 class CartViewModel: BaseViewModel {
     
-    var items = MutableLiveData<[GetCartResponse]?>()
+    var items = MutableLiveData<GetCartResponse?>()
     
     func getCart() {
-        NetworkEngine.makeRequestWithBody(url: CartUrl.get, method: .get, body: Optional<Int>.none) { (res: GenericAPIResponse<[GetCartResponse]>?, err) in
+        self.view.startWaiting()
+        NetworkEngine.makeRequestWithBody(url: CartUrl.get, method: .get, body: Optional<Int>.none) { (res: GenericAPIResponse<GetCartResponse>?, err) in
+            self.view.endWaiting()
             if let err = err {
                 self.error.value = err
                 self.items.property = nil
@@ -30,9 +47,11 @@ class CartViewModel: BaseViewModel {
         }
     }
     
-    func delete(id: String, result: @escaping (String?) -> ()) {
+    func delete(id: String) {
+        self.view.startWaiting()
         let url = "\(CartUrl.delete)\(id)"
-        NetworkEngine.makeRequestWithBody(url: url, method: .delete, body: Optional<Int>.none) { (res: GenericAPIResponse<[GetCartResponse]>?, err) in
+        NetworkEngine.makeRequestWithBody(url: url, method: .delete, body: Optional<Int>.none) { (res: GenericAPIResponse<GetCartResponse>?, err) in
+            self.view.endWaiting()
             if let err = err {
                 self.error.value = err
                 self.items.property = nil
@@ -42,9 +61,11 @@ class CartViewModel: BaseViewModel {
         }
     }
     
-    func edit(id: String) {
+    func edit(id: String, body: ChangeQuantityBody) {
         let url = "\(CartUrl.edit)\(id)/edit"
-        NetworkEngine.makeRequestWithBody(url: url, method: .put, body: Optional<Int>.none) { (res: GenericAPIResponse<[GetCartResponse]>?, err) in
+        self.view.startWaiting()
+        NetworkEngine.makeRequestWithBody(url: url, method: .put, body: body) { (res: GenericAPIResponse<GetCartResponse>?, err) in
+            self.view.endWaiting()
             if let err = err {
                 self.error.value = err
                 self.items.property = nil

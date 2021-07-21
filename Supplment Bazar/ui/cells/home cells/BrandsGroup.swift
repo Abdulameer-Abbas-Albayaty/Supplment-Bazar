@@ -29,7 +29,7 @@ class BrandsGroup: UICollectionViewCell {
         case .products:
             collecionView.register(UINib(nibName: "ItemCardCell", bundle: nil), forCellWithReuseIdentifier: productCell)
         case .categories:
-            collecionView.register(CategoryCell.self, forCellWithReuseIdentifier: categoryCell)
+            collecionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: categoryCell)
         default:
             break
         }
@@ -74,7 +74,8 @@ extension BrandsGroup: UICollectionViewDelegate, UICollectionViewDataSource, UIC
         case .brands:
             return CGSize(width: 160, height: collectionView.frame.height)
         case .categories:
-            return CGSize(width: 160, height: collectionView.frame.height)
+            let height = (collectionView.frame.height - 20) / 2
+            return CGSize(width: 180, height: height)
         default:
             return .zero
         }

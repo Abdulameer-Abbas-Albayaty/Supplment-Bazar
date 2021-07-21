@@ -40,7 +40,7 @@ class NetworkEngine {
     
     static func makeRequestWithBody<R: Decodable, X: Encodable>(url: String,method: RequestMethod,body: X? = nil, completion:@escaping ((GenericAPIResponse<R>?,String?) -> Void)) {
         if var request = buildRequest(url: url,method: method) {
-            if method == RequestMethod.post, let body = body {
+            if method == RequestMethod.post || method == .put , let body = body {
                 let encode = try? JSONEncoder().encode(body)
                 request.httpBody = encode
             }
@@ -57,27 +57,28 @@ class NetworkEngine {
                     }
                     if let data = data {
                         NetworkLogger.printResponse(response: data)
-                        let decoder = try? JSONDecoder().decode(GenericAPIResponse<R>.self, from: data)
-                        if let result = decoder {
-                            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-                                completion(nil,"connection_failure".getLocalized())
-                                return
+                        guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+                            completion(nil,"connection_failure".getLocalized())
+                            return
+                        }
+                        if statusCode == 401 {
+                            if UserUD.isLogin {
+                                completion(nil, tokenExpire)
+                            } else {
+                                let decoder = try? JSONDecoder().decode(GenericMessageResponse.self, from: data)
+                                completion(nil, decoder?.message ?? "")
                             }
-                            if 200...300 ~= statusCode {
-                                 completion(result,nil)
-                            } else if statusCode == 401 {
-                                if UserUD.isLogin {
-                                    completion(nil,tokenExpire)
+                        } else {
+                            let decoder = try? JSONDecoder().decode(GenericAPIResponse<R>.self, from: data)
+                            if let result = decoder {
+                                if 200...300 ~= statusCode {
+                                    completion(result, nil)
                                 } else {
                                     completion(nil, result.message)
                                 }
-                            } else if statusCode == 511 {
-                                completion(nil,tokenExpire)
                             } else {
-                                completion(nil,result.message)
+                                completion(nil,"connection_failure".getLocalized())
                             }
-                        } else {
-                            completion(nil,"connection_failure".getLocalized())
                         }
                     }
                 }
@@ -104,25 +105,27 @@ class NetworkEngine {
                     }
                     if let data = data {
                         NetworkLogger.printResponse(response: data)
-                        let decoder = try? JSONDecoder().decode(GenericMetaAPIResponse<R>.self, from: data)
-                        if let result = decoder {
-                            guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
-                                completion(nil,"connection_failure".getLocalized())
-                                return
-                            }
-                            if 200...300 ~= statusCode {
-                                 completion(result,nil)
-                            } else if statusCode == 401 {
-                                if UserUD.isLogin {
-                                    completion(nil,tokenExpire)
-                                }
-                            } else if statusCode == 511 {
-                                completion(nil,tokenExpire)
+                        guard let statusCode = (response as? HTTPURLResponse)?.statusCode else {
+                            completion(nil,"connection_failure".getLocalized())
+                            return
+                        }
+                        if statusCode == 401 {
+                            if UserUD.isLogin {
+                                completion(nil, tokenExpire)
                             } else {
-                                completion(nil,result.message)
+                                completion(nil, "connection_failure".getLocalized())
                             }
                         } else {
-                            completion(nil,"connection_failure".getLocalized())
+                            let decoder = try? JSONDecoder().decode(GenericMetaAPIResponse<R>.self, from: data)
+                            if let result = decoder {
+                                if 200...300 ~= statusCode {
+                                    completion(result, nil)
+                                } else {
+                                    completion(nil, result.message)
+                                }
+                            } else {
+                                completion(nil,"connection_failure".getLocalized())
+                            }
                         }
                     }
                 }

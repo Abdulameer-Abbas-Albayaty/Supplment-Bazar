@@ -9,7 +9,6 @@ import UIKit
 
 class ShopCell: UICollectionViewCell {
     
-    @IBOutlet weak var lblAddress: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var imgView: CorneredImageView!
     

@@ -8,6 +8,7 @@
 import Foundation
 
 struct SignupRequestData: Encodable {
+    let name: String
     let phone_number: String
     let password: String
     let password_confirmation: String

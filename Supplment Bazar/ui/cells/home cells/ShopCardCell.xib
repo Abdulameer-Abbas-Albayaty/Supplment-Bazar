@@ -23,23 +23,17 @@
                         <rect key="frame" x="4" y="4" width="492" height="319"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HSR-Jy-2Ed" customClass="CorneredImageView" customModule="Supplment_Bazar" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="492" height="240"/>
+                                <rect key="frame" x="0.0" y="0.0" width="492" height="271"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="250" constant="120" id="mW3-uQ-Wkr"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="P7l-el-vh5">
-                                <rect key="frame" x="16" y="248" width="460" height="55"/>
+                                <rect key="frame" x="16" y="279" width="460" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saj Alreef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OEb-97-ctq" customClass="CareemNormal" customModule="Supplment_Bazar" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="460" height="24"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                        <color key="textColor" name="text_primary"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baghdad - Karada" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCf-nP-zLl" customClass="CareemBold" customModule="Supplment_Bazar" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="26" width="460" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                         <color key="textColor" name="text_primary"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -68,7 +62,6 @@
             <size key="customSize" width="500" height="342"/>
             <connections>
                 <outlet property="imgView" destination="HSR-Jy-2Ed" id="BNT-tz-3rV"/>
-                <outlet property="lblAddress" destination="gCf-nP-zLl" id="kNG-lR-fmn"/>
                 <outlet property="lblName" destination="OEb-97-ctq" id="CpQ-FF-bRS"/>
             </connections>
             <point key="canvasLocation" x="227.536231884058" y="140.95982142857142"/>

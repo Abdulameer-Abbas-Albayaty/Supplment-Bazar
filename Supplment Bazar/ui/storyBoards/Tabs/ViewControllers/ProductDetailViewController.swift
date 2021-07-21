@@ -28,22 +28,20 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
     
     @IBOutlet weak var shopCenterView: UIView!
     @IBOutlet weak var lblMerchantTitle: UILabel!
-    @IBOutlet weak var lblMerchantAddress: UILabel!
     @IBOutlet weak var imgMerchantLogo: CircularImageView!
 
     @IBOutlet weak var footerView: UIView!
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var containerCell: UITableViewCell!
-    
-    // falvors
-    @IBOutlet weak var flavorsSection: UITableViewCell!
-    
+        
     // nutrition
     @IBOutlet weak var nutritionSection: UITableViewCell!
     @IBOutlet weak var nutritionImage: UIImageView!
     
-    
     @IBOutlet weak var storeSection: UITableViewCell!
+    
+    @IBOutlet weak var lblSelectedFlavor: BorderedLabel!
+    @IBOutlet weak var lblSelectedSize: BorderedLabel!
     
     var productId: String?
     
@@ -54,12 +52,13 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
     fileprivate var nutritionFacts: String = ""
     
     fileprivate var option: ProductOption = .flavor
+    fileprivate var varients = 0
     
     fileprivate let optionAlert = UIAlertController()
     fileprivate let picker: UIPickerView = UIPickerView()
     
-    @IBOutlet weak var flavorsButton: UIButton!
-    @IBOutlet weak var sizesButton: UIButton!
+    @IBOutlet weak var flavorsButton: UIView!
+    @IBOutlet weak var sizesButton: UIView!
     
     fileprivate var details: ProductDetailsResponse? {
         didSet {
@@ -71,19 +70,14 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        flavorsButton.layer.borderWidth = 1
-        flavorsButton.layer.borderColor = UIColor.primary.cgColor
-        flavorsButton.layer.cornerRadius = 8
-        
-        sizesButton.layer.borderWidth = 1
-        sizesButton.layer.borderColor = UIColor.primary.cgColor
-        sizesButton.layer.cornerRadius = 8
                 
         shopCenterView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleShopCenterTapped)))
         
         nutritionImage.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleNutriationTapped)))
         callAPI()
+        
+        flavorsButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(flavorsTapped)))
+        sizesButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(sizesTapped)))
     }
     
     @objc fileprivate func handleNutriationTapped(_ sender: UITapGestureRecognizer) {
@@ -110,7 +104,6 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
         footerView.isHidden = true
         headerView.isHidden = true
         containerCell.isHidden = true
-        flavorsSection.isHidden = true
         nutritionSection.isHidden = true
     }
 
@@ -162,7 +155,6 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
         footerView.isHidden = false
         headerView.isHidden = false
         containerCell.isHidden = false
-        flavorsSection.isHidden = false
         nutritionSection.isHidden = false
 
         footerView.alpha = 0
@@ -234,20 +226,15 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
             lblMerchantTitle.text = store.name
             imgMerchantLogo.setImage(store.logo, placeholder: nil, showIndicator: true, completion: nil)
         }
-        if let _ = data.options {
-            flavorsSection.isHidden = false
-        } else {
-            flavorsSection.isHidden = true
-        }
         newFalvorSize()
         tableView.reloadData()
     }
 
-    @IBAction func flavorsTapped(_ sender: Any) {
+    @objc fileprivate func flavorsTapped() {
         showPickerInActionSheet(option: .flavor)
     }
     
-    @IBAction func sizesTapped(_ sender: Any) {
+    @objc fileprivate func sizesTapped() {
         showPickerInActionSheet(option: .size)
     }
     
@@ -268,7 +255,7 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
         if UserUD.isLogin {
             guard let details = details else {return}
             guard let store = details.store else {return}
-            let body = AddCartRequest(store_id: store.id, product_id: details.id, quantity: 1)
+            let body = AddCartRequest(store_id: store.id, product_id: details.id, quantity: 1, product_type_id: varients)
             startWaiting()
             viewModel.add(body: body) { (res) in
                 self.endWaiting()
@@ -297,16 +284,15 @@ class ProductDetailsViewController: BaseTableViewController<ProductDetailsViewMo
     func newFalvorSize() {
         let selectedFlavorStr = details?.options?.flavors[selectedFlavor]
         let selectedSizeStr = details?.options?.sizes[selectedSize]
-        
-        flavorsButton.setTitle("Selected flavor: \(selectedFlavorStr ?? "")", for: .normal)
-        sizesButton.setTitle("Selected size: \(selectedSizeStr ?? "")", for: .normal)
-        
+        lblSelectedFlavor.text = selectedFlavorStr
+        lblSelectedSize.text = selectedSizeStr
         if let varients = details?.variants {
             for i in 0...varients.count - 1 {
                 if varients[i].flavor == selectedFlavorStr && varients[i].size == selectedSizeStr {
                     let obj = varients[i]
                     self.productStrImage = obj.image
                     self.nutritionFacts = obj.supplement_facts
+                    self.varients = obj.id
                     self.updateOptions()
                     break
                 }

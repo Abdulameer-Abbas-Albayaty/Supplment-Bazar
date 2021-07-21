@@ -13,12 +13,12 @@ private let baseUrl = "\(server)/api/v1"
 
 struct AuthURL {
     static let login = "\(baseUrl)/auth/login"
-    static let signUp = "\(baseUrl)/auth/signup"
+    static let signUp = "\(baseUrl)/auth/register"
     static let verifyOTP = "\(baseUrl)/users/verify"
-    static let resendOTP = "\(baseUrl)/auth/signup/resend_otp"
-    static let createChat = "\(baseUrl)/chat/user"
-    static let getChatToken = "\(baseUrl)/chat/token"
+    static let resendOTP = "\(baseUrl)/users/verify/resend"
     static let logout = "\(baseUrl)/auth/logout"
+    
+    static let profile = "\(baseUrl)/users/me"
 }
 
 struct HomeURL {
@@ -35,6 +35,13 @@ struct HomeURL {
     static let shopDetails = "\(baseUrl)/shops/"
     
     static let categoryDetails = "\(baseUrl)/categories/"
+    static let brandDetails = "\(baseUrl)/brands/"
+    
+    static let allStores = "\(baseUrl)/stores"
+}
+
+struct StoreURL {
+    static let getStoreDetails = "\(baseUrl)/stores/"
 }
 
 struct CartUrl {
@@ -44,4 +51,5 @@ struct CartUrl {
     static let edit = "\(baseUrl)/carts/"
     // delete
     static let delete = "\(baseUrl)/carts/"
+    static let checkout = "\(baseUrl)/checkouts"
 }
