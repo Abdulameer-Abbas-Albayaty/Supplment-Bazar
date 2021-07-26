@@ -1,0 +1,51 @@
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "25x-rO-cZB"; */
+"25x-rO-cZB.text" = "المجموع الكلي";
+
+/* Class = "UILabel"; text = "Shipping"; ObjectID = "7Rl-pT-DOf"; */
+"7Rl-pT-DOf.text" = "الشحن";
+
+/* Class = "UILabel"; text = "Subtotal"; ObjectID = "7i5-Be-wKn"; */
+"7i5-Be-wKn.text" = "المجموع";
+
+/* Class = "UIButton"; normalTitle = "Confirm Order"; ObjectID = "AMz-bU-CbH"; */
+"AMz-bU-CbH.normalTitle" = "تأكيد الطلب";
+
+/* Class = "UINavigationItem"; title = "Cart"; ObjectID = "CY7-vg-DMX"; */
+"CY7-vg-DMX.title" = "السلة";
+
+/* Class = "UILabel"; text = "Order Info"; ObjectID = "U48-O0-LAo"; */
+"U48-O0-LAo.text" = "معلومات الطلب";
+
+/* Class = "UITextField"; placeholder = "Address"; ObjectID = "cFz-Ny-m3J"; */
+"cFz-Ny-m3J.placeholder" = "العنوان";
+
+/* Class = "UITextField"; placeholder = "Province"; ObjectID = "deL-VO-65J"; */
+"deL-VO-65J.placeholder" = "المحافظة";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dwU-aK-wVo"; */
+"dwU-aK-wVo.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Continue"; ObjectID = "gJX-qo-mmB"; */
+"gJX-qo-mmB.normalTitle" = "استمرار";
+
+/* Class = "UITextField"; placeholder = "Mobile number"; ObjectID = "jdh-cB-6Ea"; */
+"jdh-cB-6Ea.placeholder" = "رقم الموبايل";
+
+/* Class = "UILabel"; text = "Please Enter Shipping Info"; ObjectID = "n5W-hf-IaB"; */
+"n5W-hf-IaB.text" = "يرجى ادخال معلومات الشحن";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "te2-eT-11Y"; */
+"te2-eT-11Y.placeholder" = "الاسم";
+
+/* Class = "UILabel"; text = "0 IQD"; ObjectID = "vu8-kh-yvZ"; */
+"vu8-kh-yvZ.text" = "0 IQD";
+
+/* Class = "UILabel"; text = "Total"; ObjectID = "xN2-yG-u7q"; */
+"xN2-yG-u7q.text" = "المجموع";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xmd-ha-8bN"; */
+"xmd-ha-8bN.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "zZh-El-v6Z"; */
+"zZh-El-v6Z.text" = "Label";

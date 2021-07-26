@@ -55,3 +55,11 @@
 "WASIT" = "Wasit";
 "NINEVEH" = "Nineveh";
 "OTHER" = "Other";
+
+"step1" = "Discover All the Supplments you need";
+"step2" = "Add to Cart";
+"step3" = "Get the Supplments at Home";
+
+"step1_details" = "Discover Supplments with simple interface";
+"step2_details" = "See all your needs in the Cart";
+"step3_details" = "We will deliver what you want where you want";

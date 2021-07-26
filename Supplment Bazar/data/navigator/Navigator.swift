@@ -37,6 +37,9 @@ struct StoryBoards {
 class Navigator {
     
     static func start() -> UIViewController {
+        if !UserUD.isTipsShown {
+            return toTips()
+        }
         return toTabs()
     }
     

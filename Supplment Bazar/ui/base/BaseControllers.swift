@@ -18,11 +18,11 @@ class BaseCartViewController<T: BaseViewModel>: BaseViewController<T> {
         
         let button = UIButton()
         button.tintColor = .white
-        button.setImage(#imageLiteral(resourceName: "cart"), for: .normal)
+        button.setImage(#imageLiteral(resourceName: "logo"), for: .normal)
         button.imageView?.contentMode = .scaleAspectFit
-        button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        button.imageEdgeInsets = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .primary
+        button.backgroundColor = .secondaryBackground
         
         view.addSubview(button)
         NSLayoutConstraint.activate([

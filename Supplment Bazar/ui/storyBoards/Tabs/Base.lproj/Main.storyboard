@@ -780,6 +780,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <segue destination="MDU-mN-9HP" kind="show" id="6R5-Ks-hD5"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1018,6 +1021,103 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uov-yw-Sl8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1449" y="2386"/>
+        </scene>
+        <!--Change Password-->
+        <scene sceneID="u6U-ih-imm">
+            <objects>
+                <tableViewController id="MDU-mN-9HP" customClass="ChangePasswordTableViewController" customModule="Supplment_Bazar" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="S7G-Zn-rFC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="background"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="F3Z-WJ-9vO">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="301"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="0wx-bA-lhs">
+                                    <rect key="frame" x="24" y="32" width="366" height="176"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JuB-mS-6PK" customClass="DizneyAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="366" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="P5I-ae-zgk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="lock"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OME-D4-iSi" customClass="DizneyAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="64" width="366" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="t9G-5O-JoT"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="lock"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password Confirmation" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejU-yH-2mn" customClass="DizneyAuthTextField" customModule="Supplment_Bazar" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="128" width="366" height="48"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="48" id="yMZ-gb-8LF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="maxLength">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="lock"/>
+                                            </userDefinedRuntimeAttributes>
+                                        </textField>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKr-CR-ksX" customClass="DizneyButton" customModule="Supplment_Bazar" customModuleProvider="target">
+                                    <rect key="frame" x="24" y="232" width="366" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="hEs-Ba-2oG"/>
+                                    </constraints>
+                                    <state key="normal" title="Change"/>
+                                    <connections>
+                                        <action selector="changeTapped:" destination="MDU-mN-9HP" eventType="touchUpInside" id="yj4-sT-ctC"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" name="background"/>
+                            <constraints>
+                                <constraint firstItem="0wx-bA-lhs" firstAttribute="top" secondItem="F3Z-WJ-9vO" secondAttribute="top" constant="32" id="7EB-UF-U5I"/>
+                                <constraint firstAttribute="trailing" secondItem="0wx-bA-lhs" secondAttribute="trailing" constant="24" id="IGq-q5-Mc2"/>
+                                <constraint firstItem="jKr-CR-ksX" firstAttribute="leading" secondItem="F3Z-WJ-9vO" secondAttribute="leading" constant="24" id="Lxf-LA-GHQ"/>
+                                <constraint firstAttribute="trailing" secondItem="jKr-CR-ksX" secondAttribute="trailing" constant="24" id="OCi-wk-ZES"/>
+                                <constraint firstItem="0wx-bA-lhs" firstAttribute="leading" secondItem="F3Z-WJ-9vO" secondAttribute="leading" constant="24" id="ZyO-1b-Rik"/>
+                                <constraint firstItem="jKr-CR-ksX" firstAttribute="top" secondItem="0wx-bA-lhs" secondAttribute="bottom" constant="24" id="mef-AI-JmW"/>
+                            </constraints>
+                        </view>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="MDU-mN-9HP" id="VnA-K3-Pkt"/>
+                            <outlet property="delegate" destination="MDU-mN-9HP" id="klj-cr-WAt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Change Password" id="OCh-rc-edG"/>
+                    <connections>
+                        <outlet property="txtNewConfirmation" destination="ejU-yH-2mn" id="ZVF-V9-EZM"/>
+                        <outlet property="txtNewPassword" destination="OME-D4-iSi" id="jh8-z4-gjy"/>
+                        <outlet property="txtOldPassword" destination="JuB-mS-6PK" id="27L-TV-gu9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aef-CP-Igl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2977" y="1710"/>
         </scene>
     </scenes>
     <resources>

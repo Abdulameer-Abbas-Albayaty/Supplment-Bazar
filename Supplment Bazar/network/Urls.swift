@@ -19,6 +19,7 @@ struct AuthURL {
     static let logout = "\(baseUrl)/auth/logout"
     
     static let profile = "\(baseUrl)/users/me"
+    static let changePassword = "\(baseUrl)/users/password/change"
 }
 
 struct HomeURL {

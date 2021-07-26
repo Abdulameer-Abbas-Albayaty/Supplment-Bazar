@@ -1,65 +1,144 @@
-/* 
-  Localizable.strings
-  Supplment Bazar
-
-  Created by Ameer on 21/07/2021.
-  
-*/
+/* (No Comment) */
 "about" = "حول";
 
-"ANBAR" = "انبار";
-"BABIL" = "بابل";
-"BAGHDAD" = "بغداد";
-"BASRA" = "بصرة";
-"DHIQAR" = "ذي قار";
-"DIYALA" = "ديالى";
-"DOHUK" = "دهوك";
-"ERBIL" = "اربيل";
-"HALABJA" = "حلبجة";
-"KARBALA" = "كربلاء";
-"KIRKUK" = "كركوك";
-"MAYSAN" = "ميسان";
-"MUTHANNA" = "مثنى";
-"NAJAF" = "نجف";
-"NINEVEH" = "نينوى";
-"QADISIYAH" = "قادسية";
-"SALADIN" = "صلاح الدين";
-"SULAYMANIYAH" = "سليمانية";
-"WASIT" = "واسط";
+/* provinces */
+"All" = "الكل";
 
+/* (No Comment) */
+"ANBAR" = "انبار";
+
+/* (No Comment) */
+"BABIL" = "بابل";
+
+/* (No Comment) */
+"BAGHDAD" = "بغداد";
+
+/* (No Comment) */
+"BASRA" = "بصرة";
+
+/* Localizable.strings
+  Supplment Bazar
+
+  Created by Ameer on 21/07/2021. */
 "cancel" = "الغاء";
-"change_password" = "تغيير كلمة المرور";
+
+/* No comment provided by engineer. */
+"Cancel" = "الغاء";
+
+/* (No Comment) */
 "connection_failure" = "فشل في الاتصال, اعد المحاولة لاحقا.";
 
+/* (No Comment) */
+"DHIQAR" = "ذي قار";
 
-"full_name" = "الاسم الكامل";
+/* (No Comment) */
+"DIYALA" = "ديالى";
+
+/* (No Comment) */
+"DOHUK" = "دهوك";
+
+/* (No Comment) */
+"ERBIL" = "اربيل";
+
+/* (No Comment) */
+"HALABJA" = "حلبجة";
+
+/* (No Comment) */
 "internet_failure" = "يرجى التحقق من الاتصال بالانترنت والمحاولة لاحقا.";
-"IQD" = "د.ع";
-"location_permission_denied" = "يرجى تشغيل الموقع لاكمال العملية";
 
+/* (No Comment) */
+"IQD" = "د.ع";
+
+/* (No Comment) */
+"KARBALA" = "كربلاء";
+
+/* (No Comment) */
+"KIRKUK" = "كركوك";
+
+/* logout */
 "logout" = "تسجيل خروج";
+
+/* (No Comment) */
 "logout_question" = "هل تريد تسجيل الخروج؟";
 
-"mobile_number" = "رقم الهاتف";
+/* (No Comment) */
+"MAYSAN" = "ميسان";
+
+/* (No Comment) */
+"MUTHANNA" = "مثنى";
+
+/* (No Comment) */
+"NAJAF" = "نجف";
+
+/* (No Comment) */
 "next" = "التالي";
+
+/* (No Comment) */
+"NINEVEH" = "نينوى";
+
+/* (No Comment) */
 "ok" = "حسنا";
+
+/* (No Comment) */
 "open_settings" = "فتح الاعدادات";
+
+/* (No Comment) */
+"OTHER" = "اخرى";
+
+/* (No Comment) */
 "otp_count" = "الرمز يجب ان يكون ٦ ارقام";
+
+/* (No Comment) */
 "password_changes" = "تم تغيير الرمز بنجاح";
+
+/* (No Comment) */
 "password_count" = "كلمة المرور يتكون من ٨-١٦ حرفا";
+
+/* (No Comment) */
 "password_mismatch" = "حقل تأكيد الرمز يجب ان تكون مشابه لحقل الرمز";
+
+/* validations */
 "phone_number_count" = "رقم الموبايل يتكون من ١٠ ارقام او اكثر";
 
+/* (No Comment) */
+"QADISIYAH" = "قادسية";
+
+/* (No Comment) */
 "retry" = "اعادة المحاولة";
 
-"search" = "بحث";
-"search_here" = "ابحث هنا";
+/* (No Comment) */
+"SALADIN" = "صلاح الدين";
 
+/* (No Comment) */
 "session_expired" = "انتهى مدة الجلسة";
+
+/* (No Comment) */
 "session_expired_details" = "حسابك مفعل في جهاز اخر";
 
 /* (No Comment) */
 "share" = "مشاركة";
 
-"version" = "نسخة";
-"waiting" = "يرجى الانتظار";
+/* (No Comment) */
+"step1" = "تصفح كل المكملات";
+
+/* (No Comment) */
+"step1_details" = "تصفح كل المكملات بواجهة مستخدم بسيطة";
+
+/* (No Comment) */
+"step2" = "اضف الى السلة";
+
+/* (No Comment) */
+"step2_details" = "رؤية كل ما تحتاج في سلتك";
+
+/* (No Comment) */
+"step3" = "توصيل المنتج الى بيتك";
+
+/* (No Comment) */
+"step3_details" = "نقوم بتوصيل طلبك الى اي مكان";
+
+/* (No Comment) */
+"SULAYMANIYAH" = "سليمانية";
+
+/* (No Comment) */
+"WASIT" = "واسط";
+

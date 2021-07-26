@@ -1,75 +1,83 @@
+/* Class = "UITableViewSection"; headerTitle = "App Settings"; ObjectID = "7h0-Il-H8C"; */
+"7h0-Il-H8C.headerTitle" = "اعدادات التطبيق";
+
+/* Class = "UILabel"; text = "Flavors"; ObjectID = "9a9-yQ-6n1"; */
+"9a9-yQ-6n1.text" = "النكهات";
+
+/* Class = "UIButton"; normalTitle = "Add to Cart"; ObjectID = "9NO-k3-Vft"; */
+"9NO-k3-Vft.normalTitle" = "اضافة الى السلة";
 
 /* Class = "UILabel"; text = "Karada group"; ObjectID = "184-MQ-4eQ"; */
 "184-MQ-4eQ.text" = "Karada group";
 
-/* Class = "UITableViewSection"; headerTitle = "App Settings"; ObjectID = "7h0-Il-H8C"; */
-"7h0-Il-H8C.headerTitle" = "App Settings";
-
-/* Class = "UIButton"; normalTitle = "Add to Cart"; ObjectID = "9NO-k3-Vft"; */
-"9NO-k3-Vft.normalTitle" = "Add to Cart";
-
-/* Class = "UILabel"; text = "Flavors"; ObjectID = "9a9-yQ-6n1"; */
-"9a9-yQ-6n1.text" = "Flavors";
-
-/* Class = "UILabel"; text = "How to use?"; ObjectID = "CIu-xD-wkF"; */
-"CIu-xD-wkF.text" = "How to use?";
-
-/* Class = "UILabel"; text = "Baghdad/Inner Karada"; ObjectID = "CN2-eH-Cze"; */
-"CN2-eH-Cze.text" = "Baghdad/Inner Karada";
+/* Class = "UILabel"; text = "Label"; ObjectID = "bbo-mC-xEt"; */
+"bbo-mC-xEt.text" = "Label";
 
 /* Class = "UILabel"; text = "My Orders"; ObjectID = "Ced-UH-cka"; */
-"Ced-UH-cka.text" = "My Orders";
+"Ced-UH-cka.text" = "طلباتي";
+
+/* Class = "UILabel"; text = "How to use?"; ObjectID = "CIu-xD-wkF"; */
+"CIu-xD-wkF.text" = "كيفية الاستعمال";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dra-wL-TaS"; */
+"dra-wL-TaS.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "New Password Confirmation"; ObjectID = "ejU-yH-2mn"; */
+"ejU-yH-2mn.placeholder" = "تأكيد الرمز الجديد";
 
 /* Class = "UITableViewSection"; headerTitle = "Account Settings"; ObjectID = "FCM-K0-4JQ"; */
-"FCM-K0-4JQ.headerTitle" = "Account Settings";
+"FCM-K0-4JQ.headerTitle" = "اعدادات الحساب";
+
+/* Class = "UILabel"; text = "12000 IQD"; ObjectID = "fe8-zw-fuP"; */
+"fe8-zw-fuP.text" = "12000 IQD";
 
 /* Class = "UILabel"; text = "Contact us"; ObjectID = "GKn-kI-EaB"; */
-"GKn-kI-EaB.text" = "Contact us";
+"GKn-kI-EaB.text" = "اتصل بنا";
 
 /* Class = "UINavigationItem"; title = "Profile"; ObjectID = "JCn-3k-s3V"; */
-"JCn-3k-s3V.title" = "Profile";
+"JCn-3k-s3V.title" = "الصفحة الشخصية";
+
+/* Class = "UIButton"; normalTitle = "Change"; ObjectID = "jKr-CR-ksX"; */
+"jKr-CR-ksX.normalTitle" = "تغيير";
+
+/* Class = "UITextField"; placeholder = "Old Password"; ObjectID = "JuB-mS-6PK"; */
+"JuB-mS-6PK.placeholder" = "الرمز الحالي";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "knF-pZ-yPr"; */
+"knF-pZ-yPr.title" = "الرئيسية";
 
 /* Class = "UILabel"; text = "Nutriation Facts"; ObjectID = "Kt1-0E-lEr"; */
-"Kt1-0E-lEr.text" = "Nutriation Facts";
+"Kt1-0E-lEr.text" = "حقائق غذائية";
+
+/* Class = "UINavigationItem"; title = "Search"; ObjectID = "lb0-fr-cc0"; */
+"lb0-fr-cc0.title" = "بحث";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "mDB-tK-BR6"; */
+"mDB-tK-BR6.title" = "الصفحة الشخصية";
+
+/* Class = "UINavigationItem"; title = "Change Password"; ObjectID = "OCh-rc-edG"; */
+"OCh-rc-edG.title" = "تغيير الرمز";
+
+/* Class = "UILabel"; text = "Change Password"; ObjectID = "oES-WU-zs1"; */
+"oES-WU-zs1.text" = "تغيير الرمز";
+
+/* Class = "UITextField"; placeholder = "New Password"; ObjectID = "OME-D4-iSi"; */
+"OME-D4-iSi.placeholder" = "الرمز الجديد";
+
+/* Class = "UILabel"; text = "Sizes"; ObjectID = "pCo-qU-CZw"; */
+"pCo-qU-CZw.text" = "الاحجام";
 
 /* Class = "UILabel"; text = "This shrimps, peas and rice dish is a family favourite! Its quick to cook and requires no chopping , easy."; ObjectID = "PF6-Ir-glJ"; */
 "PF6-Ir-glJ.text" = "This shrimps, peas and rice dish is a family favourite! Its quick to cook and requires no chopping , easy.";
 
 /* Class = "UILabel"; text = "Language"; ObjectID = "Uos-Xw-K3y"; */
-"Uos-Xw-K3y.text" = "Language";
-
-/* Class = "UILabel"; text = "Share"; ObjectID = "WqZ-OO-mNk"; */
-"WqZ-OO-mNk.text" = "Share";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "ZAp-OE-kf5"; */
-"ZAp-OE-kf5.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "bbo-mC-xEt"; */
-"bbo-mC-xEt.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "dra-wL-TaS"; */
-"dra-wL-TaS.text" = "Label";
-
-/* Class = "UILabel"; text = "12000 IQD"; ObjectID = "fe8-zw-fuP"; */
-"fe8-zw-fuP.text" = "12000 IQD";
-
-/* Class = "UITabBarItem"; title = "Home"; ObjectID = "knF-pZ-yPr"; */
-"knF-pZ-yPr.title" = "Home";
-
-/* Class = "UINavigationItem"; title = "Search"; ObjectID = "lb0-fr-cc0"; */
-"lb0-fr-cc0.title" = "Search";
-
-/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "mDB-tK-BR6"; */
-"mDB-tK-BR6.title" = "Profile";
-
-/* Class = "UILabel"; text = "Change Password"; ObjectID = "oES-WU-zs1"; */
-"oES-WU-zs1.text" = "Change Password";
-
-/* Class = "UILabel"; text = "Sizes"; ObjectID = "pCo-qU-CZw"; */
-"pCo-qU-CZw.text" = "Sizes";
+"Uos-Xw-K3y.text" = "اللغة";
 
 /* Class = "UINavigationItem"; title = "Home"; ObjectID = "vph-xB-SVf"; */
-"vph-xB-SVf.title" = "Home";
+"vph-xB-SVf.title" = "الرئيسية";
+
+/* Class = "UILabel"; text = "Share"; ObjectID = "WqZ-OO-mNk"; */
+"WqZ-OO-mNk.text" = "مشاركة";
 
 /* Class = "UILabel"; text = "Rice with green peas and shrimps"; ObjectID = "xiN-zw-sjt"; */
 "xiN-zw-sjt.text" = "Rice with green peas and shrimps";
@@ -77,5 +85,9 @@
 /* Class = "UILabel"; text = "Label label Label label Label label Label label Label label"; ObjectID = "ywP-aS-SC7"; */
 "ywP-aS-SC7.text" = "Label label Label label Label label Label label Label label";
 
+/* Class = "UILabel"; text = "Label"; ObjectID = "ZAp-OE-kf5"; */
+"ZAp-OE-kf5.text" = "Label";
+
 /* Class = "UINavigationItem"; title = "Details"; ObjectID = "zFL-em-Ivt"; */
-"zFL-em-Ivt.title" = "Details";
+"zFL-em-Ivt.title" = "تفاصيل";
+

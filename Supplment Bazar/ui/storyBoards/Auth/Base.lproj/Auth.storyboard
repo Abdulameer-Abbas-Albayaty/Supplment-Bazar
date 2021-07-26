@@ -361,7 +361,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="lock" width="128" height="128"/>
-        <image name="logo" width="1024" height="913"/>
+        <image name="logo" width="2093" height="2093"/>
         <image name="name" width="128" height="128"/>
         <image name="phone-call" width="64" height="64"/>
         <namedColor name="background">

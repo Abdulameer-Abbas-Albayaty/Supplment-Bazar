@@ -1,0 +1,54 @@
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "2YD-BM-vFC"; */
+"2YD-BM-vFC.normalTitle" = "انشاء حساب";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "3K8-Sx-Doo"; */
+"3K8-Sx-Doo.placeholder" = "كلمة المرور";
+
+/* Class = "UILabel"; text = "Dont have an account?"; ObjectID = "8h4-E4-6oY"; */
+"8h4-E4-6oY.text" = "ليس لديك حساب؟";
+
+/* Class = "UIButton"; normalTitle = "Forgot password"; ObjectID = "Bp7-TZ-hHc"; */
+"Bp7-TZ-hHc.normalTitle" = "نسيت الرمز";
+
+/* Class = "UINavigationItem"; title = "Login"; ObjectID = "Hn3-rX-bcm"; */
+"Hn3-rX-bcm.title" = "تسجيل دخول";
+
+/* Class = "UINavigationItem"; title = "Sign up"; ObjectID = "Jfr-I6-z2d"; */
+"Jfr-I6-z2d.title" = "انشاء حساب";
+
+/* Class = "UINavigationItem"; title = "OTP"; ObjectID = "Jsf-Qj-4BO"; */
+"Jsf-Qj-4BO.title" = "الرمز المرسل";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "N7Q-m4-551"; */
+"N7Q-m4-551.placeholder" = "كلمة المرور";
+
+/* Class = "UIButton"; normalTitle = "Resend SMS"; ObjectID = "SQ1-ck-kpW"; */
+"SQ1-ck-kpW.normalTitle" = "اعادة ارسال رمز";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "X14-K1-IhL"; */
+"X14-K1-IhL.placeholder" = "رقم الموبايل";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "cnH-ns-AAK"; */
+"cnH-ns-AAK.placeholder" = "الاسم";
+
+/* Class = "UIButton"; normalTitle = "Sign in"; ObjectID = "gZm-tP-Bn2"; */
+"gZm-tP-Bn2.normalTitle" = "تسحيل دخول";
+
+/* Class = "UIButton"; normalTitle = "Sign up"; ObjectID = "i8d-YW-tk9"; */
+"i8d-YW-tk9.normalTitle" = "انشاء حساب";
+
+/* Class = "UIButton"; normalTitle = "Verify"; ObjectID = "kK2-gQ-Q29"; */
+"kK2-gQ-Q29.normalTitle" = "تأكيد";
+
+/* Class = "UITextField"; placeholder = "Confirm Password"; ObjectID = "tEj-5s-e65"; */
+"tEj-5s-e65.placeholder" = "تأكيد كلمة المرور";
+
+/* Class = "UITextField"; placeholder = "Phone Number"; ObjectID = "uHb-Ao-kwr"; */
+"uHb-Ao-kwr.placeholder" = "رقم الموبايل";
+
+/* Class = "UILabel"; text = "OTP code"; ObjectID = "vSb-c2-pDk"; */
+"vSb-c2-pDk.text" = "الرمز المرسل";
+
+/* Class = "UITextField"; placeholder = "6 digits"; ObjectID = "zUQ-YO-zrS"; */
+"zUQ-YO-zrS.placeholder" = "٦ ارقام";

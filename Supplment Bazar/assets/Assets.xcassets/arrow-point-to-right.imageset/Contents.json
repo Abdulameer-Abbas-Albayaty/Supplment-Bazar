@@ -12,6 +12,22 @@
     {
       "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "filename" : "arrowhead-thin-outline-to-the-left.png",
+      "idiom" : "universal",
+      "locale" : "ar",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ar",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "locale" : "ar",
+      "scale" : "3x"
     }
   ],
   "info" : {
@@ -19,6 +35,7 @@
     "version" : 1
   },
   "properties" : {
+    "localizable" : true,
     "template-rendering-intent" : "template"
   }
 }

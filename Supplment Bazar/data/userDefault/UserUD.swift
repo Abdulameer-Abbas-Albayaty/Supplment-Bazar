@@ -15,6 +15,8 @@ class UserUD {
         static let refreshToken = "refreshTokenKey"
         static let notiTokenSentKey = "notiTokenSentKey"
         static let notificationTokenKey = "notificationTokenKey"
+        
+        static let isTipsShown = "isTipsShownKey"
     }
     
     static let shared = UserDefaults.standard
@@ -42,6 +44,11 @@ class UserUD {
     static var notificationToken: String? {
         get { shared.object(forKey: UserDefaultKeys.notificationTokenKey) as? String ?? nil }
         set { shared.set(newValue, forKey: UserDefaultKeys.notificationTokenKey) }
+    }
+    
+    static var isTipsShown: Bool {
+        get { shared.object(forKey: UserDefaultKeys.isTipsShown) as? Bool ?? false }
+        set { shared.set(newValue, forKey: UserDefaultKeys.isTipsShown) }
     }
     
     static func logout() {
